@@ -63,10 +63,6 @@ p, .page h2, .table td {
   -webkit-hyphens: auto;
 }
 
-.page .container p {
-  margin-top: 15px;
-}
-
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
   color: #9A9A9A;
   line-height: 1.5em;
@@ -4461,6 +4457,19 @@ textarea.form-control {
 
 .page div.section:last-child {
   padding-bottom: 35px;
+}
+
+.page .container p {
+  margin-top: 15px;
+}
+
+.page .container a {
+  padding-left: 5px;
+  color: #4E2880;
+}
+
+.page .container a .fa {
+  margin-right: 2px;
 }
 
 .main .description {
