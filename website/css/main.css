@@ -63,7 +63,7 @@ p, .page h2, .table td {
   -webkit-hyphens: auto;
 }
 
-p {
+.page .container p {
   margin-top: 15px;
 }
 
