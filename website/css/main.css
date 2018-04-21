@@ -49,10 +49,14 @@ h6, .h6 {
   line-height: 1.5em;
 }
 
-p {
+p, ul {
   font-size: 15px;
   line-height: 1.75em;
   margin: 5px 0;
+}
+
+ul {
+  margin-top: 15px; 
 }
 
 p, .page h2, .table td {
