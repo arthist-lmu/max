@@ -3074,7 +3074,7 @@ textarea.form-control {
     right: 89px;
     top: -10px;
   }
-  .navbar-nav .dropdown-menu:after {
+  .page .navbar-nav .dropdown-menu:after {
     border-bottom: 11px solid #A63564;
   }
   #dropdown-row .dropdown .dropdown-menu:after {
