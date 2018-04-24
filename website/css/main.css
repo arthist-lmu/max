@@ -4307,6 +4307,18 @@ textarea.form-control {
   min-width: 165px;
 }
 
+.page-header .motto .btn.btn-outline-neutral.first.off span:after {
+  content: "Einführung";
+}
+
+.page-header .motto .btn.btn-outline-neutral.second.off span:after {
+  content: "Anwendungsfälle";
+}
+
+.page-header .motto .btn.btn-outline-neutral.off:hover span:after {
+  content: "Coming Soon";
+}
+
 .landing-section {
   padding: 100px 0;
   z-index: 1;
