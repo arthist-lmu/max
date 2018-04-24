@@ -1979,7 +1979,7 @@ textarea.form-control {
   border-color: #FFFFFF;
 }
 
-.navbar-transparent .navbar-nav .nav-link {
+.navbar-transparent .navbar-nav .nav-item .dropdown-menu .nav-link:not(.btn) {
   color: #777777;
 }
 
@@ -3063,7 +3063,7 @@ textarea.form-control {
     content: "";
     display: inline-block;
     position: absolute;
-    right: 12px;
+    right: 89px;
     top: -10px;
   }
   #dropdown-row .dropdown .dropdown-menu:after {
