@@ -1859,8 +1859,17 @@ textarea.form-control {
 }
 
 .navbar .navbar-nav .dropdown-menu {
-  border-radius: 12px;
+  border-radius: 4px;
   margin-top: 1px;
+  padding: 20px;
+  min-width: 200px;
+  text-align: center;
+  left: -37%;
+}
+
+.navbar .navbar-nav .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 .navbar .navbar-collapse .nav-item .nav-link p {
@@ -2468,7 +2477,6 @@ textarea.form-control {
 }
 
 .footer nav> ul a:not(.btn):hover, .footer nav> ul a:not(.btn):focus, .navbar .navbar-nav .nav-item .nav-link:hover, .navbar .navbar-nav .nav-item .nav-link:focus {
-  color: #777777;
   opacity: 1;
 }
 
@@ -3024,7 +3032,7 @@ textarea.form-control {
     transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, opacity 0.3s ease 0s, height 0s linear 0.35s;
     transform: translate3d(0px, 0px, 0px);
   }
-  .navbar-nav .dropdown-menu:before, #dropdown-row .dropdown .dropdown-menu:before, .card.card-just-text .dropdown .dropdown-menu:before, .card-just-text .dropdown .dropdown-menu:before, .dropdown-btn .dropdown-menu:before {
+#dropdown-row .dropdown .dropdown-menu:before, .card.card-just-text .dropdown .dropdown-menu:before, .card-just-text .dropdown .dropdown-menu:before, .dropdown-btn .dropdown-menu:before {
     border-bottom: 11px solid #F1EAE0;
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
