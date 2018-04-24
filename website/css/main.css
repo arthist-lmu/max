@@ -4509,3 +4509,48 @@ textarea.form-control {
 .main .description {
   margin-bottom: 30px;
 }
+
+
+/* Modal styles */
+
+.modal-dialog {
+	max-width: 400px;
+	color: #fff;
+}
+
+.modal-content {
+	background-color: #e2404e;
+}
+
+.modal-body, .modal-header .close {
+	color: #fff;
+}
+
+.modal-header {
+	border-bottom: 1px solid transparent;
+}
+
+.modal-header button.close {
+	cursor: pointer;
+	-webkit-transition: all 150ms linear;
+	-moz-transition: all 150ms linear;
+	-o-transition: all 150ms linear;
+	-ms-transition: all 150ms linear;
+	transition: all 150ms linear;
+}
+
+.modal-dialog label {
+	margin-top: 15px;
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.modal-dialog .btn-block {
+	margin-top: 30px;
+}
+
+.modal-header h3, .modal-header .h3 {
+	margin: 0;
+}
