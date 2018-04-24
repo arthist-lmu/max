@@ -1873,6 +1873,10 @@ textarea.form-control {
   top: 140px;
 }
 
+.page .navbar .navbar-nav .dropdown-menu {
+  background-color: #A63564;
+}
+
 .navbar .navbar-nav .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -1981,6 +1985,10 @@ textarea.form-control {
 
 .navbar-transparent .navbar-nav .nav-item .dropdown-menu .nav-link:not(.btn) {
   color: #777777;
+}
+
+.page .navbar-transparent .navbar-nav .nav-item .dropdown-menu .nav-link:not(.btn) {
+  color: #FFFFFF;
 }
 
 .navbar-transparent .navbar-nav .active .nav-link .active .nav-link:hover, .navbar-transparent .navbar-nav .active .nav-link:focus, .navbar-transparent .navbar-nav .nav-item .nav-link:hover, .navbar-transparent .navbar-nav .nav-item .nav-link:focus, [class*="bg"] .navbar-nav .active .nav-link .active .nav-link:hover, [class*="bg"] .navbar-nav .active .nav-link:focus, [class*="bg"] .navbar-nav .nav-item .nav-link:hover, [class*="bg"] .navbar-nav .nav-item .nav-link:focus {
@@ -3065,6 +3073,9 @@ textarea.form-control {
     position: absolute;
     right: 89px;
     top: -10px;
+  }
+  .navbar-nav .dropdown-menu:after {
+    border-bottom: 11px solid #A63564;
   }
   #dropdown-row .dropdown .dropdown-menu:after {
     left: 12px !important;
