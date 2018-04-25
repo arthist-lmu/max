@@ -4519,15 +4519,35 @@ textarea.form-control {
 }
 
 .page .container .wp-caption.aligncenter {
-  width: 350px;
+  width: 350px !important;
   float: right;
   background: rgba(0,0,0,.03);
   padding: 20px;
   border-radius: 4px;
+  margin: 20px 0 20px 20px;
 }
 
 .page .container .wp-caption-text {
   margin-bottom: 0px;
+}
+
+.page .container table {
+  background-color: #f9f9f9;
+  border: 1px solid #aaa;
+  border-collapse: collapse;
+}
+
+.page .container table th {
+  text-align: left;
+}
+
+.page .container table th {
+  border: 3px #fff solid;
+  padding: .6em;
+}
+
+.page .container table tr:nth-of-type(2n) {
+  background: #F9F9F9;
 }
 
 
