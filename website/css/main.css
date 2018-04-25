@@ -4532,7 +4532,7 @@ textarea.form-control {
 }
 
 .page .container table {
-  background-color: #f9f9f9;
+  background-color: rgba(0,0,0,.03);
   border: none;
   border-collapse: collapse;
   width: 100%;
@@ -4541,7 +4541,7 @@ textarea.form-control {
 
 .page .container table th {
   text-align: left;
-  padding: .6em;
+  padding: 10px;
 }
 
 .page .container table > tr > th, .page .container table > tr > td, .page .container table > * > tr > th, .page .container table > * > tr > td {
@@ -4554,7 +4554,7 @@ textarea.form-control {
 }
 
 .page .container table > tr > th, .page .container table > * > tr > th {
-  background-color: #f2f2f2;
+  background-color: rgba(0,0,0,.03);
 }
 
 
