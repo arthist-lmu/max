@@ -4563,6 +4563,7 @@ textarea.form-control {
   border-radius: 4px;
   border: none;
   background-color: rgba(0,0,0,.03);
+  padding: 20px;
 }
 
 .page .container .toc_title .toc_toggle {
