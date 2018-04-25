@@ -4532,9 +4532,11 @@ textarea.form-control {
 }
 
 .page .container table {
-  background-color: #f9f9f9;
+  background-color: rgba(0,0,0,.03);
   border: 1px solid #aaa;
   border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
 }
 
 .page .container table th {
@@ -4547,7 +4549,7 @@ textarea.form-control {
 }
 
 .page .container table tr:nth-of-type(2n) {
-  background: #F9F9F9;
+  background: rgba(0,0,0,.01)
 }
 
 
