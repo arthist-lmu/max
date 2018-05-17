@@ -1,4 +1,4 @@
-﻿/* Font styles */
+/* Font styles */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .tooltip {
   -moz-osx-font-smoothing: grayscale;
@@ -4501,16 +4501,16 @@ textarea.form-control {
   padding-bottom: 35px;
 }
 
-.page .container p {
+.page .main .container p {
   margin-top: 15px;
 }
 
-.page .container a {
+.page .main .container a {
   padding-left: 5px;
   color: #4E2880;
 }
 
-.page .container a .fa {
+.page .main .container a .fa {
   margin-right: 2px;
 }
 
