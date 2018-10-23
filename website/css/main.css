@@ -1866,11 +1866,15 @@ textarea.form-control {
 .navbar .navbar-nav .dropdown-menu {
   border-radius: 4px;
   margin-top: 1px;
-  padding: 20px;
+  padding: 10px 20px;
   min-width: 200px;
   text-align: center;
   left: -50%;
   top: 140px;
+}
+
+.navbar .navbar-nav .dropdown-menu li {
+  margin: 10px 0;
 }
 
 .page .navbar .navbar-nav .dropdown-menu {
