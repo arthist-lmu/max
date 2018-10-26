@@ -3649,6 +3649,7 @@ textarea.form-control {
 
 .modal-dialog {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .modal-body {
