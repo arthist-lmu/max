@@ -1,5 +1,5 @@
 # MAX – Museum Analytics
-> A modular, dynamic, and interactive online tool for comparative analysis of museum data asserts.
+> A modular, dynamic, and interactive online tool for the comparative analysis of museum databases.
 
 ![](images/header.png)
 
