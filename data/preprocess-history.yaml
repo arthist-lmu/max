@@ -1,0 +1,47 @@
+functions:
+  - name: filter
+    package: dplyr
+  - name: arrange
+    package: dplyr
+  - name: select
+    package: dplyr
+  - name: rename
+    package: dplyr
+  - name: mutate
+    package: dplyr
+  - name: summarize
+    package: dplyr
+  - name: group_by
+    package: dplyr
+  - name: ungroup
+    package: dplyr
+  - name: tally
+    package: dplyr
+  - name: add_tally
+    package: dplyr
+  - name: count
+    package: dplyr
+  - name: add_count
+    package: dplyr
+  - name: pivot_longer
+    package: tidyr
+  - name: pivot_wider
+    package: tidyr
+  - name: spread
+    package: tidyr
+  - name: gather
+    package: tidyr
+  - name: separate_rows
+    package: tidyr
+  - name: unite
+    package: tidyr
+  - name: complete
+    package: tidyr
+  - name: drop_na
+    package: tidyr
+  - name: fill
+    package: tidyr
+  - name: replace_na
+    package: tidyr
+  - name: uncount
+    package: tidyr

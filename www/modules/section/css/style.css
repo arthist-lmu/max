@@ -1,0 +1,39 @@
+section {
+	flex-direction: row;
+	display: flex;
+	flex-grow: 1;
+}
+
+section > div {
+	margin-top: 20px;
+}
+
+.content > div > .no-selection {
+	border: 3px dashed #ffffff;
+	justify-content: center;
+	flex-flow: column wrap;
+	align-content: center;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 20px;
+	color: #bababa;
+	display: flex;
+	height: 100%;
+}
+
+.content > div > .no-selection i {
+	margin-bottom: 15px;
+}
+
+.content > div > .selection {
+	background-color: #ffffff;
+	align-content: center;
+	border-radius: 4px;
+	display: none;
+	height: 100%;
+}
+
+#visualize .selection {
+	overflow: hidden;
+	padding: 20px;
+}

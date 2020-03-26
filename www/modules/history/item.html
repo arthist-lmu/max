@@ -1,0 +1,38 @@
+<li class="history-item {{ item_disabled }} {{ item_checked }} {{ item_active }}" data-id="{{ item_id }}" data-status="{{ item_status }}">
+	<div class="history-checkbox">
+		<input {{ item_checked }} {{ item_disabled }} id="checkbox-{{ item_id }}" type="checkbox">
+		<label class="pull-left" for="checkbox-{{ item_id }}"></label>
+	</div>
+
+	<div class="history-text">
+		<div class="history-functions">{{ fcts }}</div>
+
+		<div class="history-args">
+			<i class="fad fa-chevron-circle-left" title="Move left"></i>
+			<div class="args-box">{{ args }}</div>
+			<i class="fad fa-chevron-circle-right" title="Move right"></i>
+		</div>
+	</div>
+
+	<div class="history-options show dropdown dropleft">
+		<a id="dropdown-{{ item_id }}" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"><i class="fad fa-ellipsis-v-alt"></i></a>
+
+		<div class="dropdown-menu" aria-labelledby="dropdown-{{ item_id }}">
+			<div class="dropdown-item delete" title="Delete task">
+				<i class="fad fa-trash-alt"></i> Delete task
+			</div>
+
+			<div class="dropdown-item help" title="Show help">
+				<i class="fad fa-question-circle"></i> Show help
+			</div>
+
+			<div class="dropdown-item warning" title="Show warnings">
+				<i class="fad fa-exclamation-circle"></i> Show warnings
+			</div>
+
+			<div class="dropdown-item error" title="Show errors">
+				<i class="fad fa-times-circle"></i> Show errors
+			</div>
+		</div>
+	</div>
+</li>

@@ -1,0 +1,25 @@
+functions:
+  - name: geom_bar
+    package: ggplot2
+  - name: geom_col
+    package: ggplot2
+  - name: geom_boxplot
+    package: ggplot2
+  - name: geom_density
+    package: ggplot2
+  - name: geom_dotplot
+    package: ggplot2
+  - name: geom_point
+    package: ggplot2
+  - name: geom_violin
+    package: ggplot2
+  - name: theme_bw
+    package: ggplot2
+  - name: theme_light
+    package: ggplot2
+  - name: theme_minimal
+    package: ggplot2
+  - name: theme_classic
+    package: ggplot2
+  - name: theme_void
+    package: ggplot2

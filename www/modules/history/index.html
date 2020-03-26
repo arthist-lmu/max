@@ -1,0 +1,34 @@
+<div id="{{ history_id }}" class="history">
+	<div class="add-task">
+		<div class="left">
+			Tasks <i class="fas fa-plus-circle" title="Add task"></i>
+		</div>
+
+		<div class="right">
+			<div class="show dropdown dropleft" title="Options">
+				<a id="dropdown-history" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"><i class="fad fa-ellipsis-v-alt"></i></a>
+
+				<div class="dropdown-menu" aria-labelledby="dropdown-history">
+					<div class="dropdown-item" title="Import tasks">
+						<i class="fad fa-file-import"></i> Import tasks
+					</div>
+
+					{{ download }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<ul class="history-items">
+		{{ history_items }}
+
+		<div class="no-selection">
+			<i class="fad fa-3x fa-clipboard-list-check"></i>
+			<div class="text">Add task</div>
+		</div>
+	</ul>
+
+	<div class="run-tasks disabled">
+		<i class="fad fa-play-circle"></i> Run selected tasks
+	</div>
+</div>

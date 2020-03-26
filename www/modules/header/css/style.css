@@ -1,0 +1,152 @@
+.header, .header > div, .header-search .selectize-dropdown-content > div {
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	display: flex;
+}
+
+.header {
+	background-color: #ffffff;
+	padding: 20px 15px;
+	z-index: 32;
+}
+
+.header-logo, .header-items {
+	align-self: stretch;
+}
+
+.header-logo, .header-items, .header-nav {
+	margin-right: 20px;
+}
+
+.header-logo img {
+	max-height: 30px;
+}
+
+.header-search label {
+    display: none;
+}
+
+.header-search, .header-nav-item {
+	margin-right: 20px;
+}
+
+.header-nav-item:last-child {
+	margin-right: 0;
+}
+
+.header-nav-item {
+    color: #bababa;
+}
+
+.header-search .selectize-input {
+	height: 34px;
+}
+
+.header-search .selectize-dropdown-content > div .text {
+	margin: 0 12px;
+	flex-grow: 1;
+	min-width: 0;
+}
+
+.header-search .selectize-dropdown-content > div .info {
+	font-size: 12px;
+}
+
+.header-search .selectize-dropdown-content > div code {
+	background-color: transparent;
+	margin-left: 6px;
+	font-size: 12px;
+	color: #cd3a56;
+}
+
+.header-search .selectize-dropdown-content > div .label, .header-search .selectize-input > div .label {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+}
+
+.header-search .selectize-input > div .label {
+	width: 290px;
+}
+
+.header-search .selectize-input i, .header-search .selectize-input .btn, .header-search .selectize-input code, .header-search .selectize-input .info {
+	display: none;
+}
+
+.header-search .selectize-dropdown-content > div .btn {
+	background-color: #f1f3f4;
+	white-space: nowrap;
+	padding: 3px 12px;
+	min-width: 80px;
+	font-size: 12px;
+	color: #333333;
+	opacity: 0;
+}
+
+.header-search .shiny-input-container:not(.shiny-input-container-inline) {
+    width: 350px;
+}
+
+.header-search .selectize-dropdown-content > .active > .btn, .header-search .selectize-dropdown-content .import > .btn {
+	opacity: 1;
+}
+
+.header-search .nicescroll-cursors {
+	border: 2px solid #ffffff;
+}
+
+.header-items {
+	flex-grow: 1;
+}
+
+.header-nav-item, .header-link-item, .header-switch {
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+}
+
+.header-nav-item, .header-link-item {
+	white-space: nowrap;
+	font-weight: 400;
+}
+
+.header-nav-item:hover, .header-nav-item:focus {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header-nav-item.active {
+	color: #333333;
+}
+
+.header-link-item {
+	margin-left: 10px;
+	color: #bababa;
+}
+
+.header-link-item i {
+	font-size: 20px;
+}
+
+.header-link-item:hover, .header-link-item:focus, .header-switch:hover {
+	text-decoration: none;
+	color: #4e2880;
+}
+
+.header-switch {
+	font-family: "Font Awesome 5 Pro";
+	display: inline-block;
+	font-weight: 400;
+	cursor: pointer;
+	color: #bababa;
+}
+
+.header-switch:before {
+	content: "\f5ff";
+}
+
+.header-switch.highlight:before {
+	content: "\f5fe";
+}

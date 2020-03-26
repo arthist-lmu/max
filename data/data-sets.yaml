@@ -1,0 +1,51 @@
+- name: Virtuelles Kupferstichkabinett
+  path: www.virtuelles-kupferstichkabinett.de
+  lang: DE
+- name: Rijksmuseum
+  path: www.rijksmuseum.nl
+  lang: EN
+- name: National Gallery of Art
+  path: www.nga.gov
+  lang: EN
+- name: Museen Thüringen
+  path: www.museen.thueringen.de
+  lang: DE
+- name: Vitrosearch
+  path: vitrosearch.ch
+  lang: DE
+- name: Städel Museum
+  path: sammlung.staedelmuseum.de
+  lang: DE
+- name: Rijksbureau voor Kunsthistorische Documentatie (RKD)
+  path: rkd.nl
+  lang: EN
+- name: Institut für Realienkunde
+  path: realonline.imareal.sbg.ac.at
+  lang: DE
+- name: PAUart
+  path: pauart.pl
+  lang: PL
+- name: Medieval Illuminated Manuscripts
+  path: manuscripts.kb.nl
+  lang: EN
+- name: Inkunabeln der Bayerischen Staatsbibliothek
+  path: inkunabeln.digitale-sammlungen.de
+  lang: DE
+- name: Katalog des grafischen Nachlasses von John Heartfield
+  path: heartfield.adk.de
+  lang: DE
+- name: Emblematica Online 
+  path: emblematica.library.illinois.edu
+  lang: EN
+- name: Österreichische Galerie Belvedere
+  path: digital.belvedere.at
+  lang: DE
+- name: Objektdatenbank der Museumslandschaft Hessen Kassel
+  path: datenbank.museum-kassel.de
+  lang: DE
+- name: Corpus Vitrearum
+  path: corpusvitrearum.de
+  lang: DE
+- name: Broadside Ballads Online
+  path: ballads.bodleian.ox.ac.uk
+  lang: EN
