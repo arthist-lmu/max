@@ -41,6 +41,7 @@ selectize_options <- function(...) {
     onDropdownOpen = I(
       'function(dropdown) {
         var dropdown_content = $(this.$dropdown_content);
+        var control = $(this.$control);
 
         if (dropdown_content.getNiceScroll().length) {
           dropdown_content.getNiceScroll().resize();
@@ -53,7 +54,7 @@ selectize_options <- function(...) {
 
         $(dropdown).on("mousedown", ".btn", function(event) {
           var value = $(this).parent().attr("data-value");
-          var parent = $(this).closest("[id]")[0];
+          var parent = $(control).closest("[id]")[0];
 
           Shiny.setInputValue(parent.id + "-button", {
             "data_id": value, "text": this.innerText
