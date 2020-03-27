@@ -21,6 +21,11 @@ In recent years, large museum databases have been created in the international m
 If you want to extend the functionality of *MAX*, you can add an *R* package function to the `.yaml` file in the folder `data` that corresponds to the respective section, i.e., currently either `preprocess-history.yaml` or `visualize-history.yaml`. The function to be added must be *Pipe*-friendly.
 
 
+## Deployment
+
+The web application is deployed through RStudio’s [shinyapps.io](https://sschneider.shinyapps.io/museum-analytics/). Additionally, it is published on [RStudio Cloud](https://rstudio.cloud/project/1077562), which provides a complete development environment of the project.
+
+
 ## About the Project
 
 *MAX* was funded from 1 March to 30 November 2018 within the program *Lehre@LMU* to strengthen research orientation in teaching. It is a project of the *IT-Gruppe Geisteswissenschaften*, the Institute of Statistics and the Institute of Art History at *Ludwig-Maximilians-Universität München*. Our team consists of Severin Burg, B.A., [Prof. Dr. Hubertus Kohle](https://www.kunstgeschichte.uni-muenchen.de/personen/professoren_innen/kohle/index.html), [Prof. Dr. Helmut Küchenhoff](https://www.stablab.stat.uni-muenchen.de/personen/leitung/kuechenhoff1/index.html) and [Stefanie Schneider, M.Sc.](https://www.kunstgeschichte.uni-muenchen.de/personen/wiss_ma/schneider/index.html)
