@@ -1,4 +1,4 @@
-.header, .header > div, .header-search .selectize-dropdown-content > div {
+.header, .header > div, .selectize-dropdown-content > .header-dropdown {
 	align-items: center;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -43,24 +43,24 @@
 	height: 34px;
 }
 
-.header-search .selectize-dropdown-content > div .text {
+.selectize-dropdown-content > .header-dropdown .text {
 	margin: 0 12px;
 	flex-grow: 1;
 	min-width: 0;
 }
 
-.header-search .selectize-dropdown-content > div .info {
+.selectize-dropdown-content > .header-dropdown .info {
 	font-size: 12px;
 }
 
-.header-search .selectize-dropdown-content > div code {
+.selectize-dropdown-content > .header-dropdown code {
 	background-color: transparent;
 	margin-left: 6px;
 	font-size: 12px;
 	color: #cd3a56;
 }
 
-.header-search .selectize-dropdown-content > div .label, .header-search .selectize-input > div .label {
+.selectize-dropdown-content > .header-dropdown .label, .header-search .selectize-input > div .label {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -75,7 +75,7 @@
 	display: none;
 }
 
-.header-search .selectize-dropdown-content > div .btn {
+.selectize-dropdown-content > .header-dropdown .btn {
 	background-color: #f1f3f4;
 	white-space: nowrap;
 	padding: 3px 12px;
@@ -89,7 +89,7 @@
     width: 350px;
 }
 
-.header-search .selectize-dropdown-content > .active > .btn, .header-search .selectize-dropdown-content .import > .btn {
+.selectize-dropdown-content .header-dropdown.active > .btn, .selectize-dropdown-content .header-dropdown.import > .btn {
 	opacity: 1;
 }
 

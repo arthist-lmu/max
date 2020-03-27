@@ -31,6 +31,7 @@ show_modal <- function(..., size = "l") {
 
 selectize_options <- function(...) {
   options <- list(
+    dropdownParent = "body", # to prevent overflow issues
     render = I(
       '{
         item: function(item, escape) { return item.label; },
@@ -49,14 +50,6 @@ selectize_options <- function(...) {
             horizrailenabled: false, enableobserver: false
           });
         }
-
-        var dropdown_left = $(this.$control).offset().left;
-        var dropdown_top = $(this.$control).offset().top +
-                           $(this.$control).outerHeight();
-
-        $(this.$dropdown).css("position", "fixed");
-	      $(this.$dropdown).css("top", dropdown_top + "px");
-	      $(this.$dropdown).css("left", dropdown_left + "px");
 
         $(dropdown).on("mousedown", ".btn", function(event) {
           var value = $(this).parent().attr("data-value");

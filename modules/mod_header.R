@@ -13,7 +13,7 @@ header_ui <- function(id) {
 
 # module server logic
 header <- function(input, output, session) {
-  ns <- session$ns
+  ns <- session$ns; id <- gsub("-$", "", ns(""))
 
   import <- callModule(header_import, id = "import")
   export <- callModule(header_export, id = "export")
