@@ -10,11 +10,10 @@ In recent years, large museum databases have been created in the international m
 
 ## Functionalities
 
-:ballot_box_with_check: A graphical user interface that enables fast progress without excessive training. It is realized with the open-source programming language *R* and the *Shiny* web framework, which are *state of the art* due to their continuous development.
-
-:ballot_box_with_check: An import module to “pull” existing data, e.g., from the [Rijksmuseum](https://www.rijksmuseum.nl/), into the tool as easily as possible. Own data sets can be fed in just as easily.
-
-:ballot_box_with_check: Dynamic and interactive graphics with *Plotly*, which show more details on mouseover. They enrich the statistical analysis by displaying complex relationships in an attractive way.
+* A graphical user interface that enables fast progress without excessive training. It is realized with the open-source programming language *R* and the *Shiny* web framework, which are *state of the art* due to their continuous development.
+* An import module to “pull” existing data, e.g., from the [Rijksmuseum](https://www.rijksmuseum.nl/), into the tool as easily as possible. Own data sets can be fed in just as easily. Currently supported are `.rds`, `.txt`, `.csv`, `.json`, `.xls`, and `.xlsx` files.
+* An export module to extract the processed, cleansed, and visualized data as a `.zip` file with `R`-compatible `.rds` files. Reproducible *R* code can also be generated based on the defined tasks.
+* Dynamic and interactive graphics with *Plotly*, which show more details on mouseover, e.g., the title or artist of an artwork. They enrich the statistical analysis by displaying complex relationships in an attractive way. Plot subregions can be zoomed in.
 
 
 ## Extensions
