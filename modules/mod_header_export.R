@@ -41,7 +41,8 @@ header_export <- function(input, output, session) {
 
         data <- filter(values$data, tab == "header") %>%
           mutate(folder = gsub(" ", "-", tolower(label))) %>%
-          mutate(folder = glue("{temp_dir}\\{folder}"))
+          mutate(folder = glue("{temp_dir}\\{folder}")) %>%
+          select(data_id, folder, original)
 
         map(data$folder, dir.create, showWarnings = FALSE)
 
@@ -54,7 +55,7 @@ header_export <- function(input, output, session) {
         print(list.files(temp_dir, recursive = TRUE))
 
         if (input$code) {
-
+          # TODO
         }
 
         zip::zipr(zipfile = connect, files = data$folder)
