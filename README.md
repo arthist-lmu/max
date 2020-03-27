@@ -8,12 +8,28 @@
 In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis.
 
 
+## Usage
+
+<p float="left">
+	<img src="www/images/screenshot-1.png" width="250" hspace="20" />
+	<img src="www/images/screenshot-2.png" width="250" hspace="20" /> 
+	<img src="www/images/screenshot-3.png" width="250" hspace="20" />
+</p>
+
+<p float="left">
+	<img src="www/images/screenshot-4.png" width="250" hspace="20" />
+	<img src="www/images/screenshot-5.png" width="250" hspace="20" /> 
+	<img src="www/images/screenshot-6.png" width="250" hspace="20" />
+</p>
+
+
 ## Functionalities
 
-* A graphical user interface that enables fast progress without excessive training. It is realized with the open-source programming language *R* and the *Shiny* web framework, which are *state of the art* due to their continuous development.
+* A graphical user interface that enables fast progress without excessive training. It is realized with the open-source programming language *R* and the *Shiny* web framework that are *state of the art* due to their continuous development.
 * An import module to “pull” existing data, e.g., from the [Rijksmuseum](https://www.rijksmuseum.nl/), into the tool as easily as possible. Own data sets can be fed in just as easily. Currently supported are `.rds`, `.txt`, `.csv`, `.json`, `.xls`, and `.xlsx` files.
 * An export module to extract the processed, cleansed, and visualized data as a `.zip` file with `R`-compatible `.rds` files. Reproducible *R* code can also be generated based on the defined tasks.
-* Dynamic and interactive graphics with *Plotly*, which show more details on mouseover, e.g., the title or artist of an artwork. They enrich the statistical analysis by displaying complex relationships in an attractive way. Plot subregions can be zoomed in.
+* Interactive tables with *DataTables* that allow to select rows by setting local and global filters. A flexbox layout is used to display the relevant section of the table always next to the tasks to be performed.
+* Dynamic and interactive graphics with *Plotly* that show more details on mouseover, e.g., the title or artist of an artwork. They enrich the statistical analysis by displaying complex relationships in an attractive way. Plot subregions can be selected and zoomed in.
 
 
 ## Extensions
@@ -42,5 +58,4 @@ The web application is written using *R* and the *Shiny* web framework. It is op
 
 ## Contributing
 
-Please report issues, feature requests, and questions to the [GitHub issue tracker](https://github.com/stefanieschneider/MAX/issues). We
-have a [Contributor Code of Conduct](https://github.com/stefanieschneider/MAX/blob/master/CODE_OF_CONDUCT.md). By participating in *MAX* you agree to abide by its terms.
+Please report issues, feature requests, and questions to the [GitHub issue tracker](https://github.com/stefanieschneider/MAX/issues). We have a [Contributor Code of Conduct](https://github.com/stefanieschneider/MAX/blob/master/CODE_OF_CONDUCT.md). By participating in *MAX* you agree to abide by its terms.
