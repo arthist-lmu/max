@@ -6,7 +6,8 @@ visualize_ui <- function(id) {
     filename = "www/modules/section/index.html",
 
     content_id = gsub("-$", "", ns("")),
-    data_output = plotlyOutput(ns("data")),
+    # TODO: why does `height = "100%"` not work correctly?
+    data_output = plotlyOutput(ns("data"), height = "90px"),
     history = history_ui(ns("history"))
   )
 }
@@ -34,6 +35,8 @@ visualize <- function(input, output, session) {
           args <- glue_data(args, "{name} = {value}")
           args <- call_args(args) #, arg_data)
 
+          # to catch further error and warning messages
+          ggplotly(mapping + do.call(task$fct, args))
           mapping <- mapping + do.call(task$fct, args)
         })
 
@@ -95,11 +98,19 @@ visualize <- function(input, output, session) {
     session$sendCustomMessage("hide", data_id)
 
     req("gg" %in% class(values$data$active[[1]]))
+    req(length(values$data$active[[1]]$layers) > 0)
 
     session$sendCustomMessage("hide", no_data_id)
     session$sendCustomMessage("show", data_id)
 
-    head(values$data, n = 1)$active[[1]]
+    p <- head(values$data, n = 1)$active[[1]]
+
+    ggplotly(p, height = as.integer(input$height)) %>%
+      config(
+        displaylogo = FALSE, modeBarButtonsToRemove = c(
+          "zoom2d", "autoScale2d", "toggleSpikelines"
+        )
+      )
   })
 
   outputOptions(output, "data", suspendWhenHidden = FALSE)
@@ -113,12 +124,14 @@ visualize <- function(input, output, session) {
     set_data = function(data) {
       data <- mutate(data, active = original)
 
-      if (data$data_id %in% values$data$data_id) {
-        data <- filter(values$data, data_id == data$data_id)
-      }
-
       values$data <- bind_rows(data, values$data) %>%
         distinct(data_id, .keep_all = TRUE)
+
+      if (data$data_id %in% values$tasks$data_id) {
+        session$sendCustomMessage(
+          "click", glue("#{id}-history .run-tasks")
+        )
+      }
     },
     get_data = function() {
       req("active" %in% colnames(values$data))
@@ -131,7 +144,7 @@ visualize <- function(input, output, session) {
     get_export = function() {
       if (nrow(values$tasks) == 0) return(values$data)
 
-      return(inner_join(values$data, values$tasks))
+      return(left_join(values$data, values$tasks))
     }
   )
 }

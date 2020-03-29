@@ -38,6 +38,10 @@ load_help <- function(fct, pkg) {
   return(list(title = get_title(html_text), content = content))
 }
 
+get_pkg <- function(fct) {
+  return(environmentName(environment(get(fct))))
+}
+
 get_args <- function(name, ...) {
   formals(name) %>% map(capture.output) %>%
     enframe(name = "name", value = "default") %>%

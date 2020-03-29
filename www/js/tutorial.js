@@ -44,11 +44,15 @@ $(document).on("shiny:idle", function() {
 				},
 				{
 					element: "#preprocess-history > ul",
-					intro: "Each task can be further specified, e.g., you can temporarily deactivate or delete it. The order of the tasks can be changed with Drag & Drop."
+					intro: "Each task can be further specified, e.g., you can temporarily deactivate it. The order of the tasks can be changed with <i>drag & drop</i>."
 				},
 				{
 					element: "#preprocess-history .run-tasks",
 					intro: "Finished? Let’s run the selected tasks to see if they can be completed successfully. If not, the respective task is marked yellow (a <i>warning</i> has occurred) or red (an <i>error</i> has occurred)."
+				},
+				{
+					element: "#header .header-link-item[title=\"Export\"]",
+					intro: "The processed, cleansed, and visualized data can be exported as a <code>.zip</code> file."
 				}
 			]
 		});

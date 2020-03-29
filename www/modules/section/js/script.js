@@ -4,12 +4,23 @@ Shiny.addCustomMessageHandler("set-visible", function(args) {
 	if (args.close) {
 		$("." + args.class).css("display", "none");	
 	}
-	
+
 	$("#" + args.id).css("display", "flex");
+    $(".history-items > div").getNiceScroll().resize();
 
 	Object.keys(datatables).forEach(function(key) {
         datatables[key].resize();
     });
 
-    $(".history-items > div").getNiceScroll().resize();
+    var sections = $("section.content:visible");
+
+    var height = $("body > .wrapper").outerHeight() - 
+    			 $("header.header").outerHeight();
+
+    height = (height - (20 + 20 * (sections.length - 1))) / 
+    		 sections.length - 40;
+
+    $.each(sections, function(key, section) {
+  		Shiny.onInputChange(section.id + "-height", height);
+  	});
 });

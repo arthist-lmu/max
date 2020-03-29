@@ -56,6 +56,10 @@ Shiny.addCustomMessageHandler("hide", function(element) {
 	$(element).css("height", "0");
 });
 
+Shiny.addCustomMessageHandler("click", function(element) {
+	$(element).click();
+});
+
 $(document).on("click", "a.disabled", function(event) {
 	event.preventDefault();
 });

@@ -160,7 +160,7 @@ preprocess <- function(input, output, session) {
     get_export = function() {
       if (nrow(values$tasks) == 0) return(values$data)
 
-      return(inner_join(values$data, values$tasks))
+      return(left_join(values$data, values$tasks))
     }
   )
 }

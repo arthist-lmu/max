@@ -5,7 +5,7 @@
 
 ## Overview
 
-In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis. The aim is to provide an interface that facilitates the introduction to programming with *R* and supports it with an intuitive visual feedback system.
+In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis. The aim is to provide an interface that facilitates the introduction to programming with *R* through an intuitive visual feedback system.
 
 
 ## Usage
@@ -36,7 +36,7 @@ First, either load one of the predefined data sets or import your own (Screensho
 
 ## Extensions
 
-If you want to extend the functionality of *MAX*, you can add an *R* package function to the `.yaml` file in the folder `data` that corresponds to the respective section, i.e., currently either `preprocess-history.yaml` or `visualize-history.yaml`. The function to be added must be *Pipe*-friendly.
+If you want to extend the functionality of *MAX*, you can add an *R* package function to the `.yaml` file in the folder `data` that corresponds to the respective section, i.e., currently either `preprocess-history.yaml` or `visualize-history.yaml`. The function to be added must be *Pipe*-friendly or *ggplot*-compatible.
 
 
 ## Deployment

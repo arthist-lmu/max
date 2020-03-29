@@ -23,3 +23,11 @@ functions:
     package: ggplot2
   - name: theme_void
     package: ggplot2
+  - name: labs
+    package: ggplot2
+  - name: xlab
+    package: ggplot2
+  - name: ylab
+    package: ggplot2
+  - name: ggtitle
+    package: ggplot2
