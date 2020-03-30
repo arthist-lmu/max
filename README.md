@@ -25,10 +25,15 @@ In recent years, large museum databases have been created in the international m
 First, either load one of the predefined data sets or import your own (Screenshot *1*). Your currently selected data set is displayed on the left, either as a table or a plot (*2*). You can now preprocess and visualize this data, e.g., standardize dates or draw a boxplot. If you do not want to separate preprocessing and visualization, you can also do both in one window (*3*). On the right you can define tasks to be performed on your data set. First, either add a new task or import a file with tasks from a previous session. Each task can be further specified, e.g., you can temporarily disable it; or view the associated documentation (*4*). Finished? Let’s run the selected tasks to see if they can be completed successfully (*5*). If not, the respective task is marked yellow (a *warning* has occurred) or red (an *error* has occurred). The processed, cleansed, and visualized data can be exported as a `.zip` file (*6*).
 
 
+## Data
+
+Initially, 17 institutions with almost 500,000 objects were selected as museum collections to be integrated into the tool: e.g., the [National Gallery of Art](https://www.nga.gov/) and the [Städel Museum](https://www.staedelmuseum.de/) in Frankfurt. These were extracted by means of *web scraping*. Since all selected collections are annotated with the iconographic classification system [Iconclass](http://iconclass.org/), they can be meaningfully examined in humanities seminar contexts.
+
+
 ## Functionalities
 
 * A graphical user interface that enables fast progress without excessive training. Each task can be further specified, e.g., can be temporarily disabled. The order of the tasks can be changed with *drag & drop*.
-* An import module to “pull” existing data, e.g., from the Dutch [Rijksmuseum](https://www.rijksmuseum.nl/) or [Österreichische Galerie Belvedere](https://www.belvedere.at/), into the tool as easily as possible. Own data sets can be fed in just as easily. Currently supported are `.rds`, `.txt`, `.csv`, `.json`, `.xls`, and `.xlsx` files.
+* An import module to “pull” existing data, e.g., from the [Rijksmuseum](https://www.rijksmuseum.nl/) in Amsterdam or [Österreichische Galerie Belvedere](https://www.belvedere.at/), into the tool as easily as possible. Own data sets can be fed in just as easily. Currently supported are `.rds`, `.txt`, `.csv`, `.json`, `.xls`, and `.xlsx` files.
 * An export module to extract the processed, cleansed, and visualized data as a `.zip` file with *R*-compatible `.rds` files. Reproducible *R* code can also be generated based on the defined tasks.
 * Interactive tables with *DataTables* that allow to select rows by setting local and global filters. A flexbox layout is used to display the relevant section of the table always next to the tasks to be performed.
 * Dynamic and interactive graphics with *Plotly* that show more details on mouseover, e.g., the title or artist of an artwork. They enrich the statistical analysis by displaying complex relationships in an attractive way. Plot subregions can be selected and zoomed in.
