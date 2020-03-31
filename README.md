@@ -56,11 +56,28 @@ The web application is deployed through RStudio’s [shinyapps.io](https://sschn
 The web application is written using *R* and the *Shiny* web framework. It is open source and licensed under *GNU General Public License v3.0*. This version is a complete re-implementation that makes use of *Shiny* modules and custom HTML templates. For the previous version, please see: https://dhvlab.gwi.uni-muenchen.de/max/.
 
 
+## Citation
+
+To cite *MAX* in publications use: Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2020): Museum Analytics. An Online Tool for the Comparative Analysis of Museum Databases, Version 0.2.0, https://github.com/stefanieschneider/MAX.
+
+A *BibTeX* entry for *LaTeX* users is:
+
+```
+@Manual{,
+	title = {Museum Analytics. An Online Tool for the Comparative Analysis of Museum Databases},
+	author = {Stefanie Schneider and Hubertus Kohle and Severin Burg and Helmut Küchenhoff},
+	year = {2020},
+	note = {Version 0.2.0},
+	url = {https://github.com/stefanieschneider/MAX},
+}
+```
+
+
 ## References
 
-* Schneider, Stefanie (2020): „Museum Analytics. Museale Sammlungen neu und anders entdecken“. In: Museumskunde 85 (*upcoming*).
-* Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2019): „Museum Analytics. Ein Online-Tool zur vergleichenden Analyse musealer Datenbestände“. Postersession bei der DHd 2019. Digital Humanities: multimedial & multimodal, DOI: https://doi.org/10.5281/zenodo.2612834.
-* Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2019): „Museum Analytics. Ein Online-Tool zur vergleichenden Analyse musealer Datenbestände“. In: DHd 2019. Digital Humanities: multimedial & multimodal. Konferenzabstracts, S. 334–335, DOI: https://doi.org/10.5281/zenodo.2596095.
+* Schneider, Stefanie (2020): “Museum Analytics. Museale Sammlungen neu und anders entdecken”. In: Museumskunde 85 (*upcoming*).
+* Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2019): “Museum Analytics. Ein Online-Tool zur vergleichenden Analyse musealer Datenbestände”. Postersession bei der DHd 2019. Digital Humanities: multimedial & multimodal, DOI: https://doi.org/10.5281/zenodo.2612834.
+* Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2019): “Museum Analytics. Ein Online-Tool zur vergleichenden Analyse musealer Datenbestände”. In: DHd 2019. Digital Humanities: multimedial & multimodal. Konferenzabstracts, S. 334–335, DOI: https://doi.org/10.5281/zenodo.2596095.
 
 
 ## Contributing
