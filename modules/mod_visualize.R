@@ -16,6 +16,7 @@ visualize_ui <- function(id) {
 visualize <- function(input, output, session) {
   ns <- session$ns; id <- gsub("-$", "", ns(""))
   fcts <- read_fcts(glue("data/{id}-history.yaml"))
+  print(fcts)
 
   history <- callModule(history, id = "history", fcts, run_fct)
   values <- reactiveValues(tasks = tibble(), data = NULL)

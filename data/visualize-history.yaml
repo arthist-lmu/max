@@ -15,19 +15,28 @@ functions:
     package: ggplot2
   - name: theme_bw
     package: ggplot2
+    remove: false
   - name: theme_light
     package: ggplot2
+    remove: false
   - name: theme_minimal
     package: ggplot2
+    remove: false
   - name: theme_classic
     package: ggplot2
+    remove: false
   - name: theme_void
     package: ggplot2
+    remove: false
   - name: labs
     package: ggplot2
+    remove: false
   - name: xlab
     package: ggplot2
+    remove: false
   - name: ylab
     package: ggplot2
+    remove: false
   - name: ggtitle
     package: ggplot2
+    remove: false

@@ -101,8 +101,8 @@ history <- function(input, output, session, fcts, run_fct) {
     fct <- filter(fcts, name == input$task_select$text)
     item_checked <- if_else(nrow(fct) > 0, TRUE, FALSE)
 
-    if (nrow(fct) == 0) fct <- list(args = "")
-    else fct$args <- list(fct$args[[1]][-1, ])
+    if (nrow(fct) == 0) fct <- list(args = "") # no arguments
+    else if (fct$remove) fct$args <- list(fct$args[[1]][-1, ])
 
     item_id <- input$task_select$item_id
 

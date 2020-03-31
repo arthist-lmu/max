@@ -24,11 +24,11 @@ header_import <- function(input, output, session) {
   values <- reactiveValues(data = NULL)
 
   observeEvent(input$file, {
-    values$data <- as_tibble(input$file, .rows = NULL)
+    values$data <- repair(as_tibble(input$file, .rows = NULL))
     ext <- get_ext(input$file$name, convert = FALSE)
 
     if (input$name == "") {
-      value <- gsub(glue("\\.{ext}"), "", values$data$name)
+      value <- gsub(glue("\\.{ext}"), "", input$file$name)
       updateTextInput(session, "name", value = value)
     }
   })

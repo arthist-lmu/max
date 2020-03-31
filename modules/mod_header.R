@@ -50,7 +50,7 @@ header <- function(input, output, session) {
       if (nrow(test) == 0) {
         header_import_ui(ns("import")) # switch to import module
       } else if (test$text_button == "Load data") {
-        file_data <- readRDS(glue("data/{test$path}"))
+        file_data <- repair(readRDS(glue("data/{test$path}")))
 
         values$data <- values$data %>%
           mutate(
@@ -97,11 +97,11 @@ header <- function(input, output, session) {
 
       if (input$button$text == "Load data") {
         test <- filter(values$data, data_id == !!data_id)
+        data <- repair(readRDS(glue("data/{test$path}")))
 
         values$data <- mutate(
           values$data, original = replace(
-            original, data_id == !!data_id,
-            list(readRDS(glue("data/{test$path}")))
+            original, data_id == !!data_id, list(data)
           )
         )
 
@@ -128,7 +128,7 @@ header <- function(input, output, session) {
 
       if(nrow(data) == 0) {
         data[nrow(data) + 1, ] <- 0 # beware: do not use NA
-        data$original <- list(NULL) # for safety reasons
+        data <- mutate(data, original = list(NULL))
       }
 
       return(data)

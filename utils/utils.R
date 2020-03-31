@@ -71,6 +71,13 @@ read_fcts <- function(file) {
     mutate(label = glue("<code>{name}</code> {title}")) %>%
     mutate(label = glue("<div title='{title}'>{label}</div>"))
 
+  # should the first argument be removed from the overview?
+  if ("remove" %in% colnames(fcts)) {
+    fcts <-  replace_na(fcts, list(remove = TRUE))
+  } else {
+    fcts <- mutate(fcts, remove = TRUE)
+  }
+
   return(select(fcts, -c(html, title)) %>% arrange(name))
 }
 
@@ -119,6 +126,10 @@ import_r <- function(file, ...) {
   # TODO
 
   return(data)
+}
+
+repair <- function(data, ...) {
+  return(as_tibble(data, .name_repair = "universal"))
 }
 
 get_ext <- function(x, convert = FALSE) {
