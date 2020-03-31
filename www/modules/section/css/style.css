@@ -1,7 +1,13 @@
 section {
 	flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 }
 
 section > div {
@@ -12,12 +18,16 @@ section > div {
 	border: 3px dashed #ffffff;
 	justify-content: center;
 	flex-flow: column wrap;
+	-ms-flex-flow: column wrap;
+	-webkit-flex-flow: column wrap;
 	align-content: center;
 	border-radius: 4px;
 	text-align: center;
 	font-size: 20px;
 	color: #bababa;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	height: 100%;
 }
 

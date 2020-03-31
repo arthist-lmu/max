@@ -24,7 +24,11 @@ body > .loader {
     width: 100%;
     top: 0;
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     justify-content: center;
     overflow: hidden;
 }
@@ -78,8 +82,12 @@ a:hover, a:focus, a:active {
 }
 
 .wrapper {
-    flex-direction: column;
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
 }
 
 .form-control {
@@ -174,6 +182,8 @@ body.modal-open {
 
 .modal.show {
     display: flex !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
 }
 
 .modal-sm .modal-header, .modal-sm .modal-footer {
@@ -519,6 +529,8 @@ table.dataTable .active span.highlight {
     line-height: 35px;
     padding: 0 14px;
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
 }
 
 .pagination > li > a:hover, .pagination > li > span:hover {
@@ -546,8 +558,12 @@ div.dataTables_wrapper .bottom {
     background-color: rgba(241, 243, 244, 0.5);
     border-radius: 0 0 4px 4px;
     flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
     padding: 20px 0px;
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     width: 100%;
     margin: 0;
 }
@@ -562,8 +578,14 @@ div.dataTables_wrapper .bottom > div:first-child {
 
 div.dataTables_wrapper .bottom > div:last-child {
     justify-content: flex-end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     flex-grow: 1;
+    -ms-flex-grow: 1;
+    -webkit-flex-grow: 1;
 }
 
 div.dataTables_wrapper div.dataTables_length select {
@@ -615,23 +637,35 @@ table.dataTable  {
 
 table.dataTable tr {
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     width: 100%;
 }
 
 table.dataTable td, table.dataTable th {
     flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    -webkit-flex-basis: 100%;
     display: block;
     flex-grow: 1;
+    -ms-flex-grow: 1;
+    -webkit-flex-grow: 1;
 }
 
 .datatables, .dataTables_wrapper {
     height: 100% !important;
     flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
 }
 
 .datatables table.dataTable {
     flex-grow: 1;
+    -ms-flex-grow: 1;
+    -webkit-flex-grow: 1;
     height: 0;
 }
 

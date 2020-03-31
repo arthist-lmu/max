@@ -1,8 +1,14 @@
 .header, .header > div, .selectize-dropdown-content > .header-dropdown {
 	align-items: center;
 	flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
 	flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	-webkit-flex-wrap: nowrap;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 }
 
 .header {
@@ -46,6 +52,8 @@
 .selectize-dropdown-content > .header-dropdown .text {
 	margin: 0 12px;
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 	min-width: 0;
 }
 
@@ -99,6 +107,8 @@
 
 .header-items {
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 }
 
 .header-nav-item, .header-link-item, .header-switch {

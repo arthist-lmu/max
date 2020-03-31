@@ -5,12 +5,20 @@
 
 .history, .history > ul {
 	flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 }
 
 .add-task, .history-items, .add-task > .left {
 	flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webbit-flex;
 }
 
 .add-task {
@@ -23,6 +31,8 @@
 	font-weight: 400;
 	font-size: 20px;
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 }
 
 .add-task > .left i {
@@ -70,6 +80,8 @@
 	margin-bottom: 20px;
 	min-height: 0; 
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 	padding: 0;
 	height: 0;
 }
@@ -82,12 +94,16 @@
 	border: 3px dashed #ffffff;
 	justify-content: center;
 	flex-flow: column wrap;
+	-ms-flex-flow: column wrap;
+	-webkit-flex-flow: column wrap;
 	align-content: center;
 	border-radius: 4px;
 	text-align: center;
 	font-size: 20px;
 	color: #bababa;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	height: 100%;
 	opacity: 0.5;
 }
@@ -102,8 +118,12 @@
 	-moz-transition: opacity .25s;
 	-o-transition: opacity .25s;
 	flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: 1;
 	border-radius: 4px;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	padding: 20px;
 	cursor: move;
 	opacity: 1;
@@ -128,6 +148,8 @@
 	align-items: baseline;
 	overflow: hidden;
 	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
 	max-height: 0;
 }
 
@@ -164,13 +186,21 @@
 
 .history-args, .history-args > div, .history-args .args-box > div {
 	flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
 	flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	-webkit-flex-direction: nowrap;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 }
 
 .history-args > div {
 	overflow-x: hidden;
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 }
 
 .history-args .args-box > div {
@@ -248,6 +278,8 @@
 .history-text {
 	min-width: 0;
 	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
 }
 
 .history-item.active .history-text {
@@ -259,6 +291,8 @@
 	overflow: hidden;
 	color: #bababa;
 	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	width: 0;
 }
 
