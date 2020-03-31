@@ -64,11 +64,11 @@ A *BibTeX* entry for *LaTeX* users is:
 
 ```
 @Manual{,
-	title = {Museum Analytics. An Online Tool for the Comparative Analysis of Museum Databases},
-	author = {Stefanie Schneider and Hubertus Kohle and Severin Burg and Helmut Küchenhoff},
-	year = {2020},
-	note = {Version 0.2.0},
-	url = {https://github.com/stefanieschneider/MAX},
+  title = {Museum Analytics. An Online Tool for the Comparative Analysis of Museum Databases},
+  author = {Stefanie Schneider and Hubertus Kohle and Severin Burg and Helmut Küchenhoff},
+  year = {2020},
+  note = {Version 0.2.0},
+  url = {https://github.com/stefanieschneider/MAX},
 }
 ```
 
