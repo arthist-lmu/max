@@ -46,7 +46,7 @@ If you want to extend the functionality of *MAX*, you can add an *R* package fun
 
 ## Deployment
 
-The web application is deployed through RStudio’s [shinyapps.io](https://sschneider.shinyapps.io/museum-analytics/). Additionally, it is published on [RStudio Cloud](https://rstudio.cloud/project/1077562), which provides a complete development environment of the project.
+The web application is deployed through RStudio’s [shinyapps.io](https://sschneider.shinyapps.io/museum-analytics/). Additionally, it is published on [RStudio Cloud](https://rstudio.cloud/project/1077562), which provides a complete development environment of the project. To promote collaboration and guarantee reproducibility, a list of all required *R* package dependencies (and their versions) was generated with *packrat*.
 
 
 ## About the Project
