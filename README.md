@@ -5,7 +5,7 @@
 
 ## Overview
 
-In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis. The aim is to provide an interface that facilitates the introduction to programming with *R* through an intuitive visual feedback system.
+<img src="www/images/usage.gif" align="left" width="250" hspace="10" /> In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis. The aim is to provide an interface that facilitates the introduction to programming with *R* through an intuitive visual feedback system.
 
 
 ## Usage
