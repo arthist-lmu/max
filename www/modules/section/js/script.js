@@ -21,6 +21,6 @@ Shiny.addCustomMessageHandler("set-visible", function(args) {
     		 sections.length - 40;
 
     $.each(sections, function(key, section) {
-  		Shiny.onInputChange(section.id + "-height", height);
+  		Shiny.onInputChange(section.id + "-height", height, {priority: "event"});
   	});
 });

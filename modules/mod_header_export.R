@@ -119,11 +119,9 @@ header_export <- function(input, output, session) {
             mutate(pmap(list(data, folder), create_file))
         }
 
-        print(list.files(temp_dir, recursive = TRUE))
+        # print(list.files(temp_dir, recursive = TRUE))
         zip::zipr(connect, files = unique(data$folder))
       })
-
-      print(message)
     }
   )
 

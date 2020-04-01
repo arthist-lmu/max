@@ -13,6 +13,12 @@ functions:
     package: ggplot2
   - name: geom_violin
     package: ggplot2
+  - name: geom_contour
+    package: ggplot2
+  - name: geom_dotplot
+    package: ggplot2
+  - name: geom_point
+    package: ggplot2
   - name: theme_bw
     package: ggplot2
     remove: false
@@ -38,5 +44,14 @@ functions:
     package: ggplot2
     remove: false
   - name: ggtitle
+    package: ggplot2
+    remove: false
+  - name: lims
+    package: ggplot2
+    remove: false
+  - name: xlim
+    package: ggplot2
+    remove: false
+  - name: ylim
     package: ggplot2
     remove: false
