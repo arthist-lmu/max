@@ -76,7 +76,7 @@ options(
     dom = "<\"top\">rt<\"bottom\"iflp><\"clear\">",
     language = list(
       search = "", searchPlaceholder = "Filter",
-      info = "_START_ to _END_ of _TOTAL_ entries",
+      info = "_START_ to _END_ of _TOTAL_ objects",
       paginate = list(
         `first` = "<i class='fa fa-angle-left'></i>",
         `previous` = "<i class='fa fa-angle-left'></i>",

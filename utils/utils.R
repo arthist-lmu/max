@@ -146,3 +146,27 @@ get_ext <- function(x, convert = FALSE) {
 
   return(ext)
 }
+
+from_json <- Vectorize(
+  rjson::fromJSON, SIMPLIFY = FALSE, USE.NAMES = FALSE
+)
+
+get_seq <- function(x) {
+  return(min(x, na.rm = TRUE):max(x, na.rm = TRUE))
+}
+
+replace_multiple <- function(string, patterns, replacements) {
+  if (length(patterns) == length(replacements)) {
+    for (i in seq_along(patterns)) {
+      string <- str_replace_all(
+        string, patterns[i], replacement = replacements[i]
+      )
+    }
+  }
+
+  return(string)
+}
+
+strip <- function(string, pattern = "[:,;]") {
+  return(str_remove_all(string, glue("^{pattern}|{pattern}$")))
+}

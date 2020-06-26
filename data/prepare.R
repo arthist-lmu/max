@@ -29,22 +29,30 @@ read_ndjson <- function(values) {
     return(process_(x))
   }
 
-  rows <- read_lines(file(glue("ndjson/{values$path}.ndjson")))
-  pb <- progress_estimated(length(rows), min_time = 5)
-
   tryCatch({
-    data <- map(rows, process) %>% bind_rows() %>%
-      mutate_if(is.list, ~map(., paste, collapse = "; ")) %>%
-      mutate_all(paste) %>% mutate_all(na_if, y = "")
+    file_path <- glue("{values$path}.rds")
 
-    cols <- map(data, ~sum(is.na(.)) / length(.)) %>%
-      enframe() %>% filter(value <= 0.75)
+    if (!file.exists(file_path)) {
+      data_path <- "ndjson/{values$path}.ndjson"
+      rows <- read_lines(file(glue(data_path)))
 
-    data <- select(data, cols$name)
-    saveRDS(data, glue("{values$path}.rds"))
+      pb <- progress_estimated(length(rows), min_time = 5)
+
+      data <- map(rows, process) %>% bind_rows() %>%
+        mutate_if(is.list, ~map(., paste, collapse = "; ")) %>%
+        mutate_all(paste) %>% mutate_all(na_if, y = "")
+
+      cols <- map(data, ~sum(is.na(.)) / length(.)) %>%
+        enframe() %>% filter(value <= 0.75)
+
+      data <- select(data, cols$name)
+      saveRDS(data, file_path)
+    } else {
+      data <- readRDS(file_path)
+    }
 
     data_info <- tibble(
-      path = glue("{values$path}.rds"),
+      path = file_path, url = values$path,
       rows = nrow(data), cols = ncol(data),
       name = values$name, lang = values$lang
     )

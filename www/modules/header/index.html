@@ -7,7 +7,8 @@
         <div class="header-search">{{ select_data }}</div>
 
         <nav class="header-nav">
-            <a class="header-nav-item active" title="Preprocess" href="#">Preprocess</a>
+        	<a class="header-nav-item active" title="Browse" href="#">Browse</a>
+            <a class="header-nav-item" title="Preprocess" href="#">Preprocess</a>
             <a class="header-nav-item" title="Visualize" href="#">Visualize</a>
         </nav>
 
@@ -15,6 +16,10 @@
     </div>
 
     <div class="header-links">
+        <a class="header-link-item" title="Login" href="#">
+            <div><i class="fas fa-sign-in"></i></div>
+            <div>{{ username }}{{ password }}{{ response }}</div>
+        </a>
         <a class="header-link-item" title="Export" href="#"><i class="fas fa-chevron-circle-down"></i></a>
         <a class="header-link-item" title="About" href="#"><i class="fas fa-info-circle"></i></a>
         <a class="header-link-item" title="GitHub" href="https://github.com/stefanieschneider/MAX" target="_blank"><i class="fab fa-github"></i></a>

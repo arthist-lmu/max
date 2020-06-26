@@ -29,4 +29,24 @@ $(document).on("shiny:sessioninitialized", function(event) {
 
 		$("div.nicescroll-rails").remove();
 	});
+
+	$(".header-link-item[title='Login'] > div:first-child").click(function() {
+		$(".header-link-item[title='Login'] > div:last-child").toggle("slow");
+	});
+
+	$("#header-username").keydown(function (event) {
+		if (event.keyCode == 13) {
+			Shiny.setInputValue("header-submit_login", true);
+		} else {
+			Shiny.setInputValue("header-submit_login", false);
+		}
+	});
+
+	$("#header-password").keydown(function (event) {
+		if (event.keyCode == 13) {
+			Shiny.setInputValue("header-submit_login", true);
+		} else {
+			Shiny.setInputValue("header-submit_login", false);
+		}
+	});
 });

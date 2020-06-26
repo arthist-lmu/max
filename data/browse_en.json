@@ -1,0 +1,33 @@
+{
+	"isoCode": "en",
+	
+	"title": "Title",
+	"alttitle": "Alternative titles",
+	"subtitle": "Artist",
+	"date": "Date",
+	"style": "Style",
+	"type": "Object type",
+	"themes": "Themes",
+	"collection": "Collection",
+	"similar": "Similar objects",
+
+	"infoLabel": "%s to %s of %s objects",
+	"selectLabel": "objects per page",
+	"detailsLabel": "Details",
+	"addLabel": "Add",
+	"removeLabel": "Remove",
+	"titleLabel": "No Title",
+	"subtitleLabel": "Unknown",
+
+	"imprint": "Imprint",
+	"privacy": "Privacy policy",
+
+	"itemLabel": "%s objects",
+	"folderLabel": "New folder",
+
+	"plotXLabel": "Date of origin",
+	"plotYLabel": "Number of objects",
+
+	"plotLegendFalse": "All objects",
+	"plotLegendTrue": "Selected objects"
+}

@@ -7,7 +7,11 @@ header_ui <- function(id) {
 
     select_data = selectizeInput(
       ns("select"), label = "", choices = NULL
-    )
+    ),
+
+    username = textInput(ns("username"), icon("user")),
+    password = passwordInput(ns("password"), icon("key")),
+    response = htmlOutput(ns("response"), inline = TRUE)
   )
 }
 
@@ -24,7 +28,7 @@ header <- function(input, output, session) {
         mutate(data_id = strtrim(map_chr(path, digest), 10)) %>%
         mutate(text_button = "Load data", original = list(NULL))
     },
-    selected = "" # use placeholder as default
+    user = NULL, selected = "" # use placeholder as default
   )
 
   observe({
@@ -118,6 +122,37 @@ header <- function(input, output, session) {
     }
   })
 
+  observeEvent(input$submit_login, {
+    if (input$submit_login) {
+      values$user <- tryCatch({
+        for(connect in dbListConnections(RMySQL::MySQL()))
+          dbDisconnect(connect) # close open connections
+
+        connect <- dbConnect(
+          RMySQL::MySQL(), user = input$username,
+          dbname = glue("labuser_{input$username}"),
+          password = input$password
+        )
+
+        list(connect = connect)
+      }, error = function(error) {
+        # TODO: open modal with error message
+
+        return(NULL)
+      })
+    }
+  })
+
+  output$response <- renderUI({
+    if (is.null(values$user)) {
+      icon("times-circle")
+    } else {
+      icon("check-circle")
+    }
+  })
+
+  outputOptions(output, "response", suspendWhenHidden = FALSE)
+
   list(
     get_tab = function() {
       if (!is.null(input$switch) && input$switch) return("")
@@ -125,13 +160,12 @@ header <- function(input, output, session) {
     },
     get_data = function() {
       data <- filter(values$data, data_id == input$select)
-
-      if(nrow(data) == 0) {
-        data[nrow(data) + 1, ] <- 0 # beware: do not use NA
-        data <- mutate(data, original = list(NULL))
-      }
+      if(nrow(data) == 0) data <- add_row(data, data_id = "0")
 
       return(data)
+    },
+    get_user = function() {
+      return(values$user)
     },
     get_export = function() {
       return(filter(values$data, map_lgl(original, ~ !is.null(.))))

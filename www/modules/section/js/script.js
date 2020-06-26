@@ -6,14 +6,15 @@ Shiny.addCustomMessageHandler("set-visible", function(args) {
 	}
 
 	$("#" + args.id).css("display", "flex");
+
     $(".history-items > div").getNiceScroll().resize();
+    $(".gallery-container").getNiceScroll().resize();
 
 	Object.keys(datatables).forEach(function(key) {
         datatables[key].resize();
     });
 
     var sections = $("section.content:visible");
-
     var height = $("body > .wrapper").outerHeight() - 
     			 $("header.header").outerHeight();
 
@@ -21,6 +22,8 @@ Shiny.addCustomMessageHandler("set-visible", function(args) {
     		 sections.length - 40;
 
     $.each(sections, function(key, section) {
-  		Shiny.onInputChange(section.id + "-height", height, {priority: "event"});
+  		Shiny.onInputChange(
+            section.id + "-height", height, {priority: "event"}
+        );
   	});
 });

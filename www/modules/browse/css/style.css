@@ -1,0 +1,253 @@
+#browse > .col-sm-3, #browse .gallery {
+	flex-direction: column;
+}
+
+#browse .gallery-container {
+	flex-direction: row;
+	overflow-y: auto;
+	flex-wrap: wrap; 
+	min-height: 0;
+	flex-grow: 1;
+	height: 0;
+}
+
+.gallery {
+	height: 100% !important;
+}
+
+.gallery img {
+    background-color: rgba(241, 243, 244, 0.5);
+}
+
+.gallery .box-image {
+	height: 150px !important;
+}
+
+.gallery .col-sm-3 {
+    -ms-flex: 0 0 calc(25% - 22.5px);
+    flex: 0 0 calc(25% - 22.5px);
+    max-width: calc(25% - 22.5px);
+	margin-right: 30px;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.gallery .col-sm-3:nth-child(4n) {
+	margin-right: 0; 
+}
+
+.gallery .col-sm-3:nth-last-child(-n+4) .box {
+    margin-bottom: 0;
+}
+
+.gallery .gallery-container {
+    margin-bottom: 30px;
+}
+
+.gallery .box-body > h5 {
+	font-size: 14px;
+}
+
+.gallery .box-body > h6 {
+	font-size: 13px;
+}
+
+.gallery .jp_select {
+	display: none;
+}
+
+.gallery .jp_bottom {
+	background-color: #f7f7f7;
+	border-radius: 4px;
+	font-size: 14px;
+	padding: 20px;
+}
+
+.gallery input[type="search"], .gallery input[type="search"]:focus {
+	border-color: transparent;
+	font-size: 14px;
+}
+
+.gallery .jp_icons {
+	margin-left: 20px;
+}
+
+.gallery .jp_pagination > a, .gallery .jp_pagination > span {
+	border: none;
+}
+
+.tree, .tree .box, .tree .box > *,
+#browse > .col-sm-3, #browse .gallery,
+#browse .gallery-container,
+.modal-body.modal-image {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.tree .box .tree-container {
+    width: calc(100% - 40px) !important;
+	max-height: 100% !important;
+	height: 0 !important;
+	flex-grow: 1;
+	-ms-flex-grow: 1;
+	-webkit-flex-grow: 1;
+}
+
+.tree .box {
+	flex-direction: column;	
+	height: auto;
+}
+
+.tree .box .search {
+    background-color: rgba(241, 243, 244, 0.5);
+	border-top: none;
+}
+
+.tree .box input[type="search"], 
+.tree .box input[type="text"] {
+	border-color: transparent;
+}
+
+.tree .box input[type="search"] {
+	height: 33px;
+}
+
+.tree .box input[type="search"]:focus {
+	border-color: transparent;
+}
+
+.tree .search > button {
+	-webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    color: #df7f91;
+}
+
+.tree .search > button.check {
+	line-height: 32px;
+}
+
+.tree .search > button:hover,
+.tree .search > button.close:hover {
+    color: #cd3a56;
+    opacity: 1;
+}
+
+.modal-body.modal-image,
+.modal-body.modal-chart {
+    width: 740px;
+}
+
+.modal-body.modal-image {
+    flex-direction: row;
+}
+
+.modal-image .left img {
+    background-color: #ddd;
+    object-fit: contain;
+    height: 500px;
+    width: 100%;
+}
+
+.modal-image .left code {
+    padding: 2px 7px;
+    font-size: 82%;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    margin-right: 3px;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.modal-image .left > span {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    left: 0;
+    line-height: 1;
+    background-color: rgb(255, 255, 255, 0.8);
+    width: calc(100% - 15px);
+}
+
+.modal-image .left > span > a {
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    background-color: transparent;
+    font-size: 14px;
+    color: #df7f91;
+}
+
+.modal-image .left > span > a:hover {
+    color: #cd3a56;
+}
+
+.modal-image .left {
+    padding-right: 15px;
+    position: relative;
+    height: 500px;
+    width: 45%;
+}
+
+.modal-image .right {
+    padding-left: 15px;
+    width: 55%;
+}
+
+.modal-image .right h3 {
+    margin-bottom: 30px;
+    font-style: italic;
+    margin-right: 38px;
+    line-height: 1.5;
+    font-size: 24px;
+}
+
+.modal-image .right code {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    margin-right: 3px;
+    padding: 0 7px;
+    font-size: 90%;
+    color: inherit;
+}
+
+.modal-image .right .line {
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.modal-image .right .line > div {
+    display: table;
+}
+
+.modal-image .right .line > div:first-child {
+    font-weight: 500;
+    width: 125px;
+    float: left;
+}
+
+.modal-image .right img {
+    background-color: rgba(241, 243, 244, 0.5);
+    margin: 5px 5px 0 0;
+    object-fit: contain;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+    width: 84px;
+}
+
+.tooltip {
+    background-color: rgba(241, 243, 244, 0.5);
+    border-radius: 4px;
+    position: absolute;
+    padding: 10px;
+    margin: 10px;
+    height: auto;
+    opacity: 1;
+}
+
+.modal-chart .js-plotly-plot .plotly .modebar {
+    margin-right: 23px;
+}

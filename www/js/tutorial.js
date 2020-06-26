@@ -11,7 +11,10 @@ $(document).on("shiny:idle", function() {
 			steps: [
 				{
 			 		intro: "In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. <i>Museum Analytics</i>, <i>MAX</i>, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis.",
-					tooltipClass: "wide"
+					tooltipClass: "wide",
+					onExit: function() {
+						$("a.header-nav-item[title='Preprocess']").click();
+					}
 				},
 				{
 					element: "#header .header-search",
@@ -19,7 +22,7 @@ $(document).on("shiny:idle", function() {
 				},
 				{
 					element: "#preprocess .no-selection",
-					intro: "Your currently selected data set is displayed here, either as a table or a plot."
+					intro: "Your currently selected data set is displayed here, either as a table or a plot. Predefined data sets can also be displayed in form of a gallery."
 				},
 				{
 					element: "#header .header-nav",
@@ -56,6 +59,22 @@ $(document).on("shiny:idle", function() {
 				}
 			]
 		});
+
+		intro.onchange(function() {
+			var index = this._currentStep + ((this._direction == 'backward')? 1 : -1);
+
+			if (
+				typeof this._introItems[index] !== 'undefined' && 
+				typeof this._introItems[index].onExit === 'function'
+			)
+				this._introItems[index].onExit();
+
+			if (
+				typeof this._introItems[this._currentStep] !== 'undefined' && 
+				typeof this._introItems[this._currentStep].onEnter === 'function'
+			)
+				this._introItems[this._currentStep].onEnter();
+		})
 
 		intro.start();
 		first_load = false; 

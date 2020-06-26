@@ -1,22 +1,31 @@
 server <- function(input, output, session) {
   header <- callModule(header, id = "header")
+  browse <- callModule(browse, id = "browse")
 
   preprocess <- callModule(preprocess, id = "preprocess")
   visualize <- callModule(visualize, id = "visualize")
 
   observeEvent(header$get_tab(), {
-    if (header$get_tab() == "Preprocess") {
+    if (header$get_tab() == "Browse") {
+      browse$set_visible(close = TRUE)
+    } else if (header$get_tab() == "Preprocess") {
       preprocess$set_visible(close = TRUE)
     } else if (header$get_tab() == "Visualize") {
       visualize$set_visible(close = TRUE)
     } else if (header$get_tab() == "") {
+      browse$set_visible(close = FALSE)
       preprocess$set_visible(close = FALSE)
       visualize$set_visible(close = FALSE)
     }
   })
 
   observeEvent(header$get_data(), {
+    browse$set_data(header$get_data())
     preprocess$set_data(header$get_data())
+  })
+
+  observeEvent(header$get_user(), {
+    browse$set_user(header$get_user())
   })
 
   observeEvent(preprocess$get_data(), {

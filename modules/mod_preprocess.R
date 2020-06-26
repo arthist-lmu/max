@@ -99,6 +99,7 @@ preprocess <- function(input, output, session) {
     session$sendCustomMessage("hide", no_data_id)
     session$sendCustomMessage("show", data_id)
 
+    input$height # triggers correct reload
     head(values$data, n = 1)$active[[1]]
   },
   escape = FALSE, rownames = FALSE, style = "bootstrap",

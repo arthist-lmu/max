@@ -331,7 +331,7 @@ body.modal-open {
 }
 
 .nicescroll-rails {
-    margin-left: -2px !important;
+    margin-left: -3px !important;
     opacity: 0.75 !important;
 }
 
@@ -498,18 +498,21 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
     border-top-right-radius: 4px;
 }
 
-.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus,
+.jp_pagination > a.jp-current {
     border-color: transparent;
     cursor: not-allowed;
 }
 
-.pagination > .active > a, .pagination > .active > span {
+.pagination > .active > a, .pagination > .active > span,
+.jp_pagination > a.jp-current {
     background-color: #df7f91;
     border-color: transparent;
     color: #ffffff;
 }
 
-.pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > .active > span:hover {
+.pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > .active > span:hover,
+.jp_pagination > a:hover, .jp_pagination > a:focus {
     background-color: #cd3a56;
     border-color: transparent;
     color: #ffffff;
@@ -521,7 +524,8 @@ table.dataTable .active span.highlight {
     color: #333333;
 }
 
-.pagination > li > a, .pagination > li > span {
+.pagination > li > a, .pagination > li > span,
+.jp_pagination > a, .jp_pagination > span {
     -webkit-transition: .25s ease-in-out;
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
@@ -533,7 +537,8 @@ table.dataTable .active span.highlight {
     display: -webkit-flex;
 }
 
-.pagination > li > a:hover, .pagination > li > span:hover {
+.pagination > li > a:hover, .pagination > li > span:hover,
+.jp_pagination > a:hover {
     background-color: rgba(241, 243, 244, 0.5);
     color: #333333;
 }
@@ -790,4 +795,29 @@ table.dataTable td, table.dataTable th {
 
 .progress[title="Non-compatible file format"] .progress-bar::before {
     content: "\f057";
+}
+
+.header-dropdown .info {
+    background: transparent;
+    box-shadow: none;
+    font-size: 12px;
+    font: inherit;
+    padding: 0;
+}
+
+.leaflet a:active, .leaflet a:focus {
+    background-color: #ffffff;
+}
+
+.leaflet section > div {
+    margin-top: 5px;
+}
+
+.leaflet-retina .leaflet-draw-toolbar a, 
+.leaflet-control-fullscreen-button::before, 
+.leaflet-touch .leaflet-control-layers-toggle::before, 
+.leaflet-touch .leaflet-control-zoom-in::before, 
+.leaflet-touch .leaflet-control-zoom-out::before,
+.leaflet .fa {
+    font-weight: 300;
 }
