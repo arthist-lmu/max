@@ -75,7 +75,7 @@ A *BibTeX* entry for *LaTeX* users is:
 
 ## References
 
-* Schneider, Stefanie (2020): “Museum Analytics. Museale Sammlungen neu und anders entdecken”. In: Museumskunde 85 (*upcoming*).
+* Schneider, Stefanie (2020): “Museum Analytics. Museale Sammlungen neu und anders entdecken”. In: Museumskunde 84. Online-Erweiterung, URL: https://www.museumsbund.de/wp-content/uploads/2020/04/final-schneider.pdf.
 * Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2019): “Museum Analytics. Ein Online-Tool zur vergleichenden Analyse musealer Datenbestände”. Postersession bei der DHd 2019. Digital Humanities: multimedial & multimodal, DOI: https://doi.org/10.5281/zenodo.2612834.
 * Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2019): “Museum Analytics. Ein Online-Tool zur vergleichenden Analyse musealer Datenbestände”. In: DHd 2019. Digital Humanities: multimedial & multimodal. Konferenzabstracts, S. 334–335, DOI: https://doi.org/10.5281/zenodo.2596095.
 
