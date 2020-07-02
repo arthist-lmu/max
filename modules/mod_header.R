@@ -124,27 +124,26 @@ header <- function(input, output, session) {
 
   observeEvent(input$submit_login, {
     if (input$submit_login) {
-      values$user <- tryCatch({
-        for(connect in dbListConnections(RMySQL::MySQL()))
-          dbDisconnect(connect) # close open connections
+      values$user <- Login$new(input$username, input$password)
+      # TODO: open modal with error message, if relevant
 
-        connect <- dbConnect(
-          RMySQL::MySQL(), user = input$username,
-          dbname = glue("labuser_{input$username}"),
-          password = input$password
-        )
-
-        list(connect = connect)
-      }, error = function(error) {
-        # TODO: open modal with error message
-
-        return(NULL)
-      })
+      # values$user <- tryCatch({
+      #   for(connect in dbListConnections(RMySQL::MySQL()))
+      #     dbDisconnect(connect) # close open connections
+      #
+      #   connect <- dbConnect(
+      #     RMySQL::MySQL(), user = input$username,
+      #     dbname = glue("labuser_{input$username}"),
+      #     password = input$password
+      #   )
+      # }, error = function(error) {
+      #   return(NULL)
+      # })
     }
   })
 
   output$response <- renderUI({
-    if (is.null(values$user)) {
+    if (is.null(values$user$header)) {
       icon("times-circle")
     } else {
       icon("check-circle")

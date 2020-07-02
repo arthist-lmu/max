@@ -36,9 +36,14 @@ browse_gallery <- function(input, output, session) {
   observeEvent(input$show_click_value, {
     if (!is.null(input$show_click_id)) {
       resource_id <- input$show_click_resource_id
-      index <- match(resource_id, values$data$id)
 
-      resource <- values$data[index, ]
+      if (!(resource_id %in% values$data$id)) {
+        data <- get_sources(resource_id, FILE_MD)
+        values$data <- rbindlist(list(values$data, data))
+      }
+
+      index <- match(resource_id, values$data$id)
+      resource <- values$data[index[1], ]
 
       if (input$show_click_value == "details") {
         title <- unique(unlist(resource$title), FALSE)
@@ -85,7 +90,7 @@ browse_gallery <- function(input, output, session) {
 
         show_modal(modal_content, class = "modal-image")
       } else {
-
+        # TODO: what should happen if add is clicked?
       }
     }
   })
@@ -104,7 +109,18 @@ browse_gallery <- function(input, output, session) {
       perl = FALSE, ignore.case = TRUE, fixed = FALSE
     )
 
-    viewer$set_data(list(image = image))
+    if (!is.null(values$user$header)) {
+      points <- readRDS("data/points.rds")
+
+      viewer$set_data(
+        list(image = image, points = points[[
+          input$show_click_resource_id]])
+      )
+    } else {
+      viewer$set_data(
+        list(image = image, points = NULL)
+      )
+    }
   })
 
   observeEvent(input$show_page_range, {
@@ -144,7 +160,10 @@ browse_gallery <- function(input, output, session) {
           values$data <- rbindlist(list(values$data, data))
         }
       } else {
-        # TODO: modal "no results"
+        show_modal(
+          HTML("<p>Your search didn't return any results.</p>"),
+          size = "s" # small modal without close button
+        )
       }
     }
 
@@ -223,7 +242,12 @@ browse_gallery <- function(input, output, session) {
   })
 
   observeEvent(viewer$get_points(), {
+    rid <- input$show_click_resource_id
+    req(rid, values$user$header)
 
+    points <- readRDS("data/points.rds")
+    points[[rid]] <- viewer$get_points()
+    saveRDS(points, "data/points.rds")
   })
 
   outputOptions(output, "show", suspendWhenHidden = FALSE)
@@ -288,12 +312,22 @@ get_line <- function(key, value, type = "text") {
   value <- value[!is.na(value) & nchar(value) > 0]
 
   if (length(value) > 0) {
-    value <- strip(iconv(value, "UTF-8", to = "WINDOWS-1252"))
+    if (.Platform$OS.type == "windows") {
+      value <- iconv(value, "UTF-8", to = "WINDOWS-1252")
+    }
+
+    value <- strip(value) # strip possible whitespaces
 
     if (type == "code") {
       value <- sapply(value[order(value)], code, simplify = FALSE)
     } else if (type == "img") {
-      value <- glue("<img src='{get_iiif(value, 200)}'>")
+      resource_id <- str_match(value, '\\\\(.*)\\.')[, 2]
+
+      value <- glue(
+        "<img class='lazy loaded' src='{get_iiif(value, 200)}' ",
+        "data-resource-id='{resource_id}' title='' alt=''>"
+      )
+
       value <- HTML(paste(value, collapse = ""))
     } else {
       value <- paste(value, collapse = "; ") # reduce to one line

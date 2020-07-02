@@ -28,17 +28,28 @@ browse_tree <- function(input, output, session) {
     if (nchar(search) == 0) {
       values$data <- get_initial(FILE_IC)
       examples$data <- get_examples(0:9, FILE_IC)
-    } else if (nchar(search) > 2) {
+    } else {
       codes <- search_codes(search, FILE_IC)
-      codes <- get_codes(codes, FILE_IC)
 
-      children_1 <- get_children(codes, FILE_IC)
-      children_2 <- get_children(children_1, FILE_IC)
+      if (!is.null(codes)) {
+        codes <- get_codes(codes, FILE_IC)
 
-      values$data <- c(
-        values$data, codes, children_1,
-        children_2, values$data[1]
-      )
+        children_1 <- get_children(codes, FILE_IC)
+        children_2 <- get_children(children_1, FILE_IC)
+
+        values$data <- c(
+          values$data, codes, children_1,
+          children_2, values$data[1]
+        )
+      } else {
+        values$data <- get_initial(FILE_IC)
+        examples$data <- get_examples(0:9, FILE_IC)
+
+        show_modal(
+          HTML("<p>Your search didn't return any results.</p>"),
+          size = "s" # small modal without close button
+        )
+      }
     }
   })
 
@@ -157,9 +168,11 @@ search_codes <- function(term, file) {
 
     results <- c(unlist(parents), results[[1]])
     results <- c(results, unlist(children))
+
+    return(unique(results))
   }
 
-  return(unique(results))
+  return(NULL)
 }
 
 get_examples <- function(codes, file) {

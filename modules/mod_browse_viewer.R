@@ -7,10 +7,10 @@ browse_viewer_ui <- function(id) {
 
 # module server logic
 browse_viewer <- function(input, output, session) {
-  values <- reactiveValues(image = NULL, points = "")
+  values <- reactiveValues(image = NULL, points = NULL)
 
   observeEvent(input$img_plot_points, {
-    # values$points <- input$img_plot_points
+    values$points <- input$img_plot_points
   })
 
   output$img_plot <- renderLeaflet({
@@ -22,7 +22,7 @@ browse_viewer <- function(input, output, session) {
   list(
     set_data = function(data) {
       values$image <- data$image
-      values$points <- ""
+      values$points <- data$points
     },
     get_points = function() {
       return(values$points)
@@ -30,13 +30,15 @@ browse_viewer <- function(input, output, session) {
   )
 }
 
-get_overlay <- function(image, points = "") {
+get_overlay <- function(image, points = NULL) {
+  if (is.null(points) | length(points) == 0) points <- ""
+
   if (is.list(points)) {
     points <- unname(unlist(points, recursive = TRUE))
     points <- split(points, ceiling(seq_along(points) / 2))
 
     points <- lapply(points, function(x) {
-      glue("[{paste0(x, collapse = ", ")}]")
+      glue("[{paste0(x, collapse = ', ')}]")
     })
 
     points <- paste0(unlist(points), collapse = ", ")
@@ -105,9 +107,13 @@ get_overlay <- function(image, points = "") {
           html: '<span>' + section_id + '</span>'
         }})
 
-        drawn_markers.addLayer(marker);
-        marker.setIcon(custom_icon);
-        marker.dragging.enable();
+        try {{
+          drawn_markers.addLayer(marker);
+          marker.dragging.enable();
+          marker.setIcon(custom_icon);
+        }} catch (error) {{
+          // console.log(error);
+        }}
 
         add_lines(); export_markers();
 
