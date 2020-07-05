@@ -24,6 +24,14 @@
 
 First, either load one of the predefined data sets or import your own (Screenshot *1*). Your currently selected data set is displayed on the left, either as a table or a plot (*2*). You can now preprocess and visualize this data, e.g., standardize dates or draw a boxplot. If you do not want to separate preprocessing and visualization, you can also do both in one window (*3*). On the right you can define tasks to be performed on your data set. First, either add a new task or import a file with tasks from a previous session. Each task can be further specified, e.g., you can temporarily disable it; or view the associated documentation (*4*). Finished? Let’s run the selected tasks to see if they can be completed successfully (*5*). If not, the respective task is marked yellow (a *warning* has occurred) or red (an *error* has occurred). The processed, cleansed, and visualized data can be exported as a `.zip` file (*6*).
 
+<p float="left">
+	<img src="www/images/screenshot-7.png" width="250" hspace="10" />
+	<img src="www/images/screenshot-8.png" width="250" hspace="10" /> 
+	<img src="www/images/screenshot-9.png" width="250" hspace="10" />
+</p>
+
+You can moreover browse the predefined data sets in a more image-oriented manner (*7*). Similar objects can be explored based solely on their visual properties (*8*). Not only can the metadata of the objects serve as a filter, but the annotations of the classification system [Iconclass](http://iconclass.org/) can also restrict the inventory in a meaningful way (*9*).
+
 
 ## Data
 
