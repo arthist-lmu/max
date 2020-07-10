@@ -821,3 +821,7 @@ table.dataTable td, table.dataTable th {
 .leaflet .fa {
     font-weight: 300;
 }
+
+.jp_icon:first-child {
+    margin-left: 0;
+}

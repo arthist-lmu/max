@@ -1,7 +1,7 @@
 var first_load = true;
 
 $(document).on("shiny:idle", function() {
-	if (first_load) {
+	if (first_load && $("#browse .gallery .jp_bottom").length) {
 		var intro = introJs();
 
 		intro.setOptions({
@@ -11,22 +11,38 @@ $(document).on("shiny:idle", function() {
 			steps: [
 				{
 			 		intro: "In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. <i>Museum Analytics</i>, <i>MAX</i>, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis.",
-					tooltipClass: "wide",
+					tooltipClass: "wide"
+				},
+				{
+					element: "#browse .gallery",
+					intro: "Predefined data sets can be displayed in form of a gallery."
+				},
+				{
+					element: "#browse .gallery .jp_filter",
+					intro: "To better explore them, they can be filtered either via their metadata ..."
+				},
+				{
+					element: "#browse .tree > .box",
+					intro: "... or via annotations defined using the <i>Iconclass</i> classification system."
+				},
+				{
+					element: "#browse .gallery .jp_icons",
+					intro: "The dates of origin of the filtered objects can be easily compared in relation to all objects.",
 					onExit: function() {
 						$("a.header-nav-item[title='Preprocess']").click();
 					}
 				},
 				{
 					element: "#header .header-search",
-					intro: "First, either load one of the predefined data sets or import your own."
+					intro: "Now, either load one of the predefined data sets or import your own."
 				},
 				{
 					element: "#preprocess .no-selection",
-					intro: "Your currently selected data set is displayed here, either as a table or a plot. Predefined data sets can also be displayed in form of a gallery."
+					intro: "Your currently selected data set is displayed here, either as a table or a plot."
 				},
 				{
 					element: "#header .header-nav",
-					intro: "You can now preprocess and visualize this data, e.g., standardize dates or draw a boxplot."
+					intro: "You can then preprocess and visualize this data, e.g., standardize dates or draw a boxplot."
 				},
 				{
 					element: "#header .header-switch",
