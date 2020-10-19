@@ -7,13 +7,6 @@ Shiny.addCustomMessageHandler("set-visible", function(args) {
 
 	$("#" + args.id).css("display", "flex");
 
-    $(".history-items > div").getNiceScroll().resize();
-    $(".gallery-container").getNiceScroll().resize();
-
-	Object.keys(datatables).forEach(function(key) {
-        datatables[key].resize();
-    });
-
     var sections = $("section.content:visible");
     var height = $("body > .wrapper").outerHeight() - 
     			 $("header.header").outerHeight();

@@ -143,10 +143,12 @@ browse_gallery <- function(input, output, session) {
   })
 
   observeEvent(input$show_filter, {
-    filter <- NULL
+    filter <- NULL; terms <- input$show_filter
+    # terms <- trimws(gsub("[[:punct:]]-[:]", " ", terms))
+    terms <- str_replace_all(terms, "[\\p{P}-[:]]", " ")
 
-    if (nchar(trimws(input$show_filter)) > 0) {
-      examples <- get_sources(input$show_filter, FILE_MD, TRUE)
+    if (nchar(terms) > 0) {
+      examples <- get_sources(terms, FILE_MD, TRUE)
 
       if (length(examples) > 0) {
         page_range <- c(values$per_page, length(examples))

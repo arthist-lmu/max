@@ -98,6 +98,12 @@
     width: 350px;
 }
 
+@media only screen and (max-width: 1000px) {
+	.header-search .shiny-input-container:not(.shiny-input-container-inline) {
+    	width: 250px;
+	}
+}
+
 .selectize-dropdown-content .header-dropdown.active > .btn, .selectize-dropdown-content .header-dropdown.import > .btn {
 	opacity: 1;
 }

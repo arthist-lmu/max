@@ -1,5 +1,15 @@
+#browse {
+    overflow-y: hidden;
+}
+
 #browse > .col-sm-3, #browse .gallery {
 	flex-direction: column;
+}
+
+#browse > .col-sm-9, 
+#browse > .col-sm-3 {
+    max-width: 100%;
+    min-width: 0px;
 }
 
 #browse .gallery-container {
@@ -61,6 +71,12 @@
 	border-radius: 4px;
 	font-size: 14px;
 	padding: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .gallery .jp_pagination {
+        margin-top: 10px;
+    }
 }
 
 .gallery input[type="search"], .gallery input[type="search"]:focus {
@@ -211,6 +227,7 @@
     padding: 0 7px;
     font-size: 90%;
     color: inherit;
+    cursor: pointer;
 }
 
 .modal-image .right .line {

@@ -825,3 +825,9 @@ table.dataTable td, table.dataTable th {
 .jp_icon:first-child {
     margin-left: 0;
 }
+
+.gutter {
+  cursor: col-resize;
+  background: #f7f7f7;
+  height: 100%;
+}

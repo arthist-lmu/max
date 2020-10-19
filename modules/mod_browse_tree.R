@@ -7,6 +7,7 @@ browse_tree_ui <- function(id) {
 
 # module server logic
 browse_tree <- function(input, output, session) {
+  ns <- session$ns; box_options <- c("details")#, "add")
   examples <- reactiveValues(data = NULL, codes = 0:9)
 
   values <- reactiveValues(
@@ -22,8 +23,13 @@ browse_tree <- function(input, output, session) {
     }
   })
 
+  observeEvent(input$show_code, {
+    removeModal(); search <- trimws(input$show_search)
+    session$sendCustomMessage(ns("set"), search)
+  })
+
   observeEvent(input$show_search, {
-    search <- input$show_search
+    search <- trimws(input$show_search)
 
     if (nchar(search) == 0) {
       values$data <- get_initial(FILE_IC)
@@ -86,10 +92,18 @@ browse_tree <- function(input, output, session) {
     get_data = function() {
       if (!is.null(values$url)) {
         indices <- examples$data %in% values$url
-        return(examples$data[indices])
-      }
 
-      return(examples$data)
+        if (sum(indices) == 0) {
+          show_modal(
+            HTML("<p>Your search didn't return any results.</p>"),
+            size = "s" # small modal without close button
+          )
+        } else {
+          return(examples$data[indices])
+        }
+      } else {
+        return(examples$data)
+      }
     }
   )
 }

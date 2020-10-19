@@ -112,22 +112,6 @@ preprocess <- function(input, output, session) {
           $("td:eq(" + i + ")", row).attr("title", data[i]);
         }
       }'
-    ),
-    initComplete = JS(
-      'function(settings, json) {
-        Object.keys(datatables).forEach(function(key) {
-          datatables[key].hide().remove();
-        });
-
-        datatables = {}; // reset instances
-
-        new_scroll = $(this).niceScroll({
-  		    autohidemode: true, cursorcolor: "#f1f3f4",
-  		    horizrailenabled: true, enableobserver: false
-  		  });
-
-  		  datatables[$(this)[0].id] = new_scroll;
-      }'
     )
   )
   )

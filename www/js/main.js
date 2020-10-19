@@ -16,11 +16,6 @@ $(document).on("shiny:idle", function() {
 		autohidemode: true, cursorcolor: "#f1f3f4",
 		horizrailenabled: false, enableobserver: false
 	});
-
-	$(".gallery-container").niceScroll({
-		autohidemode: true, cursorcolor: "#f1f3f4",
-		horizrailenabled: false, enableobserver: false
-	});
 });
 
 $(document).on("DOMSubtreeModified", ".modal.show .progress-bar", function() {
