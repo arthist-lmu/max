@@ -8,10 +8,12 @@ browse_tree_ui <- function(id) {
 # module server logic
 browse_tree <- function(input, output, session) {
   ns <- session$ns; box_options <- c("details")#, "add")
+
+  switch <- callModule(browse_switch, id = "switch")
   examples <- reactiveValues(data = NULL, codes = 0:9)
 
   values <- reactiveValues(
-    data = get_initial(FILE_IC), url = NULL
+    data = get_initial(FILE_IC), url = NULL, lang = "en"
   )
 
   observe({
@@ -32,23 +34,22 @@ browse_tree <- function(input, output, session) {
     search <- trimws(input$show_search)
 
     if (nchar(search) == 0) {
-      values$data <- get_initial(FILE_IC)
+      values$data <- get_initial(FILE_IC, values$lang)
       examples$data <- get_examples(0:9, FILE_IC)
     } else {
       codes <- search_codes(search, FILE_IC)
 
       if (!is.null(codes)) {
-        codes <- get_codes(codes, FILE_IC)
+        codes <- get_codes(codes, FILE_IC, values$lang)
 
-        children_1 <- get_children(codes, FILE_IC)
-        children_2 <- get_children(children_1, FILE_IC)
+        children_1 <- get_children(codes, FILE_IC, values$lang)
+        children_2 <- get_children(children_1, FILE_IC, values$lang)
 
         values$data <- c(
-          values$data, codes, children_1,
-          children_2, values$data[1]
+          values$data, codes, children_1, children_2, values$data[1]
         )
       } else {
-        values$data <- get_initial(FILE_IC)
+        values$data <- get_initial(FILE_IC, values$lang)
         examples$data <- get_examples(0:9, FILE_IC)
 
         show_modal(
@@ -63,12 +64,29 @@ browse_tree <- function(input, output, session) {
     children <- input$show_opened_children
     codes <- names(values$data) %in% children
 
-    children <- get_children(values$data[codes], FILE_IC)
+    children <- get_children(
+      values$data[codes], FILE_IC, values$lang
+    )
+
     codes <- names(children) %in% names(values$data)
 
     if (sum(!codes) > 0) {
       values$data <- c(values$data, children[!codes])
     }
+  })
+
+  observeEvent(input$show_options, {
+    if (input$show_options == "Switch language") {
+      browse_switch_ui(ns("switch")) # switch language
+    }
+  })
+
+  observeEvent(switch$get_data(), {
+    values$lang <- switch$get_data() # re-specify
+
+    values$data <- get_codes(
+      names(values$data), FILE_IC, values$lang
+    )
   })
 
   output$show <- renderTree({
@@ -108,7 +126,7 @@ browse_tree <- function(input, output, session) {
   )
 }
 
-get_codes <- function(codes, file) {
+get_codes <- function(codes, file, lang = "en") {
   get_code <- function(code, connect) {
     value <- tryCatch(
       {
@@ -125,7 +143,7 @@ get_codes <- function(codes, file) {
         if (length(parent) == 0) parent <- "#"
 
         children <- rjson::fromJSON(result[["c"]])
-        text <- rjson::fromJSON(result[["txt"]])$en
+        text <- rjson::fromJSON(result[["txt"]])[[lang]]
         n_ex <- rjson::fromJSON(result[["n_ex"]])
 
         text <- glue("<code>{code}</code> {text}")
@@ -209,17 +227,17 @@ get_examples <- function(codes, file) {
   return(unique(unlist(results, TRUE, FALSE)))
 }
 
-get_children <- function(codes, file) {
+get_children <- function(codes, file, lang = "en") {
   if (length(codes) > 0) {
     results <- lapply(codes, function(x) x$children)
 
-    return(get_codes(unlist(results), file))
+    return(get_codes(unlist(results), file, lang))
   }
 }
 
-get_initial <- function(file) {
-  codes <- get_codes(as.character(0:9), file)
-  children <- get_children(codes, file)
+get_initial <- function(file, lang = "en") {
+  codes <- get_codes(as.character(0:9), file, lang)
+  children <- get_children(codes, file, lang)
 
   return(c(codes, children))
 }

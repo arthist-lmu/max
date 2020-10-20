@@ -44,6 +44,7 @@ source("modules/mod_browse_tree.R")
 source("modules/mod_browse_chart.R")
 source("modules/mod_browse_viewer.R")
 source("modules/mod_browse_gallery.R")
+source("modules/mod_browse_switch.R")
 
 source("modules/mod_preprocess.R")
 source("modules/mod_visualize.R")

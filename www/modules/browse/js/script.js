@@ -47,6 +47,13 @@ $(document).on("shiny:sessioninitialized", function(event) {
 		Shiny.setInputValue(section_id + "search", $(this).text(), {priority: "event"});
 		Shiny.setInputValue(section_id + "code", true, {priority: "event"});
 	});
+
+	$(document).on("click", "#browse .dropdown-item", function() {
+		var section_id = "browse-tree-show_options";
+		var input_text = this.innerText.trim();
+
+		Shiny.setInputValue(section_id, input_text, {priority: "event"});
+	});
 });
 
 Shiny.addCustomMessageHandler("browse-tree-set", function(args) {

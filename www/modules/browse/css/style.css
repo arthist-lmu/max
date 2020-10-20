@@ -268,3 +268,7 @@
 .modal-chart .js-plotly-plot .plotly .modebar {
     margin-right: 23px;
 }
+
+.modal-body[data-id="browse-tree-switch"] {
+    overflow-y: visible !important;
+}
