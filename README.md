@@ -5,21 +5,21 @@
 
 ## Overview
 
-<img src="www/images/usage.gif" align="left" width="250" hspace="10" /> In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis. The aim is to provide an interface that facilitates the introduction to programming with *R* through an intuitive visual feedback system. In so doing, students acquire knowledge in the statistical analysis of relatively large amounts of data; an ability that is becoming increasingly important in a museum work context, but which is virtually ignored by classical art history.
+In recent years, large museum databases have been created in the international museum sector that are awaiting meaningful use. They offer a hitherto unknown opportunity for empirical investigation of the history of collections, which can be expected to yield far-reaching results, especially in a comparative perspective. *Museum Analytics*, *MAX*, is intended to enable lecturers to import freely selectable museum databases and make them available to students for analysis. The aim is to provide an interface that facilitates the introduction to programming with *R* through an intuitive visual feedback system. In so doing, students acquire knowledge in the statistical analysis of relatively large amounts of data; an ability that is becoming increasingly important in a museum work context, but which is virtually ignored by classical art history.
 
 
 ## Usage
 
 <p float="left">
-	<img src="www/images/screenshot-1.png" width="250" hspace="10" />
-	<img src="www/images/screenshot-2.png" width="250" hspace="10" /> 
-	<img src="www/images/screenshot-6.png" width="250" hspace="10" />
+	<img src="www/images/screenshot-1.png" width="250" hspace="5" />
+	<img src="www/images/screenshot-2.png" width="250" hspace="5" /> 
+	<img src="www/images/screenshot-6.png" width="250" hspace="5" />
 </p>
 
 <p float="left">
-	<img src="www/images/screenshot-4.png" width="250" hspace="10" />
-	<img src="www/images/screenshot-5.png" width="250" hspace="10" /> 
-	<img src="www/images/screenshot-3.png" width="250" hspace="10" />
+	<img src="www/images/screenshot-4.png" width="250" hspace="5" />
+	<img src="www/images/screenshot-5.png" width="250" hspace="5" /> 
+	<img src="www/images/screenshot-3.png" width="250" hspace="5" />
 </p>
 
 First, either load one of the predefined data sets or import your own (Screenshot *1*). Your currently selected data set is displayed on the left, either as a table or a plot (*2*). You can now preprocess and visualize this data, e.g., standardize dates or draw a boxplot. If you do not want to separate preprocessing and visualization, you can also do both in one window (*3*). On the right you can define tasks to be performed on your data set. First, either add a new task or import a file with tasks from a previous session. Each task can be further specified, e.g., you can temporarily disable it; or view the associated documentation (*4*). Finished? Let’s run the selected tasks to see if they can be completed successfully (*5*). If not, the respective task is marked yellow (a *warning* has occurred) or red (an *error* has occurred). The processed, cleansed, and visualized data can be exported as a `.zip` file (*6*).
