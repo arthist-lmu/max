@@ -1,47 +1,36 @@
-server <- function(input, output, session) {
-  header <- callModule(header, id = "header")
-  browse <- callModule(browse, id = "browse")
+require(data.table)
+require(sendmailR)
+# require(googlesheets)
+require(htmltools)
+require(stringi)
+require(RMySQL)
+require(tidyverse)
 
-  preprocess <- callModule(preprocess, id = "preprocess")
-  visualize <- callModule(visualize, id = "visualize")
+helper_files <- list.files(path = "./helpers", pattern = "*.R")
+helper_files <- paste0("helpers/", helper_files)
 
-  observeEvent(header$get_tab(), {
-    if (header$get_tab() == "Browse") {
-      browse$set_visible(close = TRUE)
-    } else if (header$get_tab() == "Preprocess") {
-      preprocess$set_visible(close = TRUE)
-    } else if (header$get_tab() == "Visualize") {
-      visualize$set_visible(close = TRUE)
-    } else if (header$get_tab() == "") {
-      browse$set_visible(close = FALSE)
-      preprocess$set_visible(close = FALSE)
-      visualize$set_visible(close = FALSE)
-    }
-  })
-
-  observeEvent(header$get_data(), {
-    browse$set_data(header$get_data())
-    preprocess$set_data(header$get_data())
-  })
-
-  observeEvent(header$get_user(), {
-    browse$set_user(header$get_user())
-  })
-
-  observeEvent(preprocess$get_data(), {
-    visualize$set_data(preprocess$get_data())
-  })
-
-  observe({
-    req(header$get_export(), nrow(header$get_export()) > 0)
-    req(preprocess$get_export(), visualize$get_export())
-
-    data <- bind_rows(
-      mutate(header$get_export(), tab = "header"),
-      mutate(preprocess$get_export(), tab = "preprocess"),
-      mutate(visualize$get_export(), tab = "visualize")
-    )
-
-    header$set_export(filter(data, data_id != "0"))
-  })
+for (i in seq_along(helper_files)) {
+  source(helper_files[i], local = TRUE, encoding = "UTF-8")$value
 }
+
+# by default, the maximum file size is limited to 5 mb per file
+max_file_size <- 100
+options(shiny.maxRequestSize = max_file_size * 1024 ^ 2)
+
+shinyServer(function(input, output, session) {
+  server_files <- list.files(path = "./server", pattern = "*.R")
+  if (length(server_files) > 0) server_files <- paste0("server/", server_files)
+  
+  for (i in seq_along(server_files)) {
+    source(server_files[i], local = TRUE, encoding = "UTF-8")$value
+  }
+
+  shinyjs::hide(id = "loading-content", anim = TRUE, animType = "fade")    
+  shinyjs::show(id = "app-content")
+  
+  # show modal for first steps
+  text <- fread("data/first_steps.txt", encoding = "UTF-8", sep = ";",
+    quote = "", blank.lines.skip = TRUE, header = FALSE)
+  text <- paste(text[[1]], collapse = "")
+  show_modal(text, title = "Erste Schritte", confirm = FALSE)
+})
