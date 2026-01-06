@@ -66,7 +66,7 @@ The web application is written using *R* and the *Shiny* web framework. It is op
 
 ## Citation
 
-To cite *MAX* in publications use: Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2020): Museum Analytics. An Online Tool for the Comparative Analysis of Museum Databases, Version 0.2.0, https://github.com/stefanieschneider/MAX.
+To cite *MAX* in publications use: Schneider, Stefanie; Kohle, Hubertus; Burg, Severin; Küchenhoff, Helmut (2020): Museum Analytics. An Online Tool for the Comparative Analysis of Museum Databases, Version 0.2.0, https://github.com/arthist-lmu/max.
 
 A *BibTeX* entry for *LaTeX* users is:
 
@@ -76,7 +76,7 @@ A *BibTeX* entry for *LaTeX* users is:
   author = {Stefanie Schneider and Hubertus Kohle and Severin Burg and Helmut Küchenhoff},
   year = {2020},
   note = {Version 0.2.0},
-  url = {https://github.com/stefanieschneider/MAX},
+  url = {https://github.com/arthist-lmu/max},
 }
 ```
 
@@ -90,4 +90,4 @@ A *BibTeX* entry for *LaTeX* users is:
 
 ## Contributing
 
-Please report issues, feature requests, and questions to the [GitHub issue tracker](https://github.com/stefanieschneider/MAX/issues). We have a [Contributor Code of Conduct](https://github.com/stefanieschneider/MAX/blob/master/CODE_OF_CONDUCT.md). By participating in *MAX* you agree to abide by its terms.
+Please report issues, feature requests, and questions to the [GitHub issue tracker](https://github.com/arthist-lmu/max/issues). We have a [Contributor Code of Conduct](https://github.com/arthist-lmu/max/blob/v2/CODE_OF_CONDUCT.md). By participating in *MAX* you agree to abide by its terms.
